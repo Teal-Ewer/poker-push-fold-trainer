@@ -1,5 +1,5 @@
 /*-------------------------------- Constants --------------------------------*/
-let values = ["2", "3", "4", "5", "6", "7", "8", "9", "A", "J", "K", "Q", "T"];
+let values = ["2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K", "A"];
 const suits = ["spades", "hearts", "clubs", "diamonds"];
 
 // prettier-ignore
@@ -41,6 +41,7 @@ dropdown.addEventListener("focusout", function (event) {
 });
 
 pushButton.addEventListener("click", deal);
+
 foldButton.addEventListener("click", () => console.log(getHandValue()));
 
 /*-------------------------------- Functions --------------------------------*/
@@ -48,7 +49,7 @@ class Card {
 	constructor(value, suit) {
 		this.value = value;
 		this.suit = suit;
-		this.url = `../images/${this.value}_of_${this.suit}.png`;
+		this.source = `../images/${this.value}_of_${this.suit}.png`;
 	}
 }
 
@@ -74,8 +75,8 @@ function deal() {
 		card2 = deck[Math.floor(Math.random() * 52)];
 	}
 	hand.push(card1, card2);
-	leftCard.src = hand[0].url;
-	rightCard.src = hand[1].url;
+	leftCard.src = hand[0].source;
+	rightCard.src = hand[1].source;
 }
 
 function getHandValue() {
@@ -83,13 +84,13 @@ function getHandValue() {
 	if (hand[0].value === hand[1].value) {
 		result += hand[0].value + hand[1].value;
 		return result;
-	} else if (hand[0].value > hand[1].value) {
+	} else if (values.indexOf(hand[0].value) > values.indexOf(hand[1].value)) {
 		result += hand[0].value + hand[1].value;
 		if (hand[0].suit === hand[1].suit) {
 			result += "s";
 		} else result += "o";
 		return result;
-	} else if (hand[1].value > hand[0].value) {
+	} else {
 		result += hand[1].value + hand[0].value;
 		if (hand[0].suit === hand[1].suit) {
 			result += "s";
