@@ -23,8 +23,15 @@ const mainChart = [
 let deck = [];
 
 /*------------------------ Cached Element References ------------------------*/
+const dropdown = document.querySelector(".dropdown");
+const pushButton = document.querySelector("#pushButton");
+const foldButton = document.querySelector("#foldButton");
 
 /*----------------------------- Event Listeners -----------------------------*/
+dropdown.addEventListener("click", function (event) {
+	event.stopPropagation();
+	dropdown.classList.toggle("is-active");
+});
 
 /*-------------------------------- Functions --------------------------------*/
 class Card {

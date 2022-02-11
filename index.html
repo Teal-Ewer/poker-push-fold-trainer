@@ -17,26 +17,39 @@
 		<div class="container">
 			<div class="dropdown">
 				<div class="dropdown-trigger">
-					<button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-						<span>Choose a Seat Position</span>
-						<span class="icon is-small">
-							<i class="fas fa-angle-down" aria-hidden="true"></i>
+					<button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
+						<span>Select a seat position&nbsp;&nbsp;</span>
+						<span>
+							<img src="https://img.icons8.com/external-those-icons-fill-those-icons/24/000000/external-down-arrows-those-icons-fill-those-icons-7.png"/>
 						</span>
 					</button>
 				</div>
-				<div class="dropdown-menu" id="dropdown-menu" role="menu">
+				<div class="dropdown-menu" id="dropdown-menu3" role="menu">
 					<div class="dropdown-content">
 						<a href="#" class="dropdown-item">
-							Dropdown item
-						</a>
-						<a class="dropdown-item">
-							Other dropdown item
+							Overview
 						</a>
 						<a href="#" class="dropdown-item">
-							Active dropdown item
+							Modifiers
 						</a>
 						<a href="#" class="dropdown-item">
-							Other dropdown item
+							Grid
+						</a>
+						<a href="#" class="dropdown-item">
+							Form
+						</a>
+						<a href="#" class="dropdown-item">
+							Elements
+						</a>
+						<a href="#" class="dropdown-item">
+							Components
+						</a>
+						<a href="#" class="dropdown-item">
+							Layout
+						</a>
+						<hr class="dropdown-divider">
+						<a href="#" class="dropdown-item">
+							More
 						</a>
 					</div>
 				</div>
@@ -45,9 +58,12 @@
 				<img src="images/10_of_diamonds.png" alt="" class="leftCard" />
 				<img src="images/2_of_clubs.png" alt="" class="rightCard" />
 			</div>
+			<div class="resultsMessage">
+				<h2>This is the results message</h2>
+			</div>
 			<div id="buttonDiv">
-				<button class="button is-secondary">Push</button>
-				<button class="button is-danger">Fold</button>
+				<button id="pushButton" class="button is-info">Push</button>
+				<button id="foldButton" class="button is-danger">Fold</button>
 			</div>
 			<div id="linkDiv"></div>
 		</div>
