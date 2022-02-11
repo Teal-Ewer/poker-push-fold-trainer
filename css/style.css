@@ -4,15 +4,21 @@ body {
 	text-align: center;
 }
 
+h1 {
+	font-size: 2rem;
+	padding: 1rem;
+}
+
 .container {
 	width: 70%;
 	min-height: 80%;
 	background-color: #e9ecef;
 	margin: 0 auto;
+	padding: 1rem;
 	border-radius: 10px;
 }
 
-h1 {
-	font-size: 2rem;
-	padding: 1rem;
+img {
+	margin-top: 10px;
+	width: 45%;
 }

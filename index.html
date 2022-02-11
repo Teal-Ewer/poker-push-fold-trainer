@@ -15,13 +15,39 @@
 	<body>
 		<h1 "id="title">Poker | Push or Fold</h1>
 		<div class="container">
+			<div class="dropdown">
+				<div class="dropdown-trigger">
+					<button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+						<span>Choose a Seat Position</span>
+						<span class="icon is-small">
+							<i class="fas fa-angle-down" aria-hidden="true"></i>
+						</span>
+					</button>
+				</div>
+				<div class="dropdown-menu" id="dropdown-menu" role="menu">
+					<div class="dropdown-content">
+						<a href="#" class="dropdown-item">
+							Dropdown item
+						</a>
+						<a class="dropdown-item">
+							Other dropdown item
+						</a>
+						<a href="#" class="dropdown-item">
+							Active dropdown item
+						</a>
+						<a href="#" class="dropdown-item">
+							Other dropdown item
+						</a>
+					</div>
+				</div>
+			</div>
 			<div class="cards">
-				<img src="" alt="" class="leftCard" />
-				<img src="" alt="" class="rightCard" />
+				<img src="images/10_of_diamonds.png" alt="" class="leftCard" />
+				<img src="images/2_of_clubs.png" alt="" class="rightCard" />
 			</div>
 			<div id="buttonDiv">
-				<button class="btn"></button>
-				<button class="btn"></button>
+				<button class="button is-secondary">Push</button>
+				<button class="button is-danger">Fold</button>
 			</div>
 			<div id="linkDiv"></div>
 		</div>
