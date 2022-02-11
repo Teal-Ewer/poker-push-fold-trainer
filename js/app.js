@@ -1,5 +1,5 @@
 /*-------------------------------- Constants --------------------------------*/
-const values = [2, 3, 4, 5, 6, 7, 8, 9, "T", "J", "Q", "K", "A"];
+let values = ["2", "3", "4", "5", "6", "7", "8", "9", "A", "J", "K", "Q", "T"];
 const suits = ["spades", "hearts", "clubs", "diamonds"];
 
 // prettier-ignore
@@ -41,7 +41,7 @@ dropdown.addEventListener("focusout", function (event) {
 });
 
 pushButton.addEventListener("click", deal);
-foldButton.addEventListener("click", () => console.log(hand));
+foldButton.addEventListener("click", () => console.log(getHandValue()));
 
 /*-------------------------------- Functions --------------------------------*/
 class Card {
@@ -78,4 +78,25 @@ function deal() {
 	rightCard.src = hand[1].url;
 }
 
+function getHandValue() {
+	let result = "";
+	if (hand[0].value === hand[1].value) {
+		result += hand[0].value + hand[1].value;
+		return result;
+	} else if (hand[0].value > hand[1].value) {
+		result += hand[0].value + hand[1].value;
+		if (hand[0].suit === hand[1].suit) {
+			result += "s";
+		} else result += "o";
+		return result;
+	} else if (hand[1].value > hand[0].value) {
+		result += hand[1].value + hand[0].value;
+		if (hand[0].suit === hand[1].suit) {
+			result += "s";
+		} else result += "o";
+		return result;
+	}
+}
+
 init();
+getHandValue();
