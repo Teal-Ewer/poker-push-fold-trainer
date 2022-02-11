@@ -42,7 +42,7 @@ dropdown.addEventListener("focusout", function (event) {
 
 pushButton.addEventListener("click", deal);
 
-foldButton.addEventListener("click", () => console.log(getHandValue()));
+foldButton.addEventListener("click", () => console.log(handValue));
 
 /*-------------------------------- Functions --------------------------------*/
 class Card {
@@ -55,7 +55,7 @@ class Card {
 
 function init() {
 	makeDeck();
-	deal();
+  deal();
 }
 
 function makeDeck() {
@@ -68,6 +68,7 @@ function makeDeck() {
 }
 
 function deal() {
+  handValue = "";
 	hand = [];
 	let card1 = deck[Math.floor(Math.random() * 52)];
 	let card2 = deck[Math.floor(Math.random() * 52)];
@@ -76,28 +77,26 @@ function deal() {
 	}
 	hand.push(card1, card2);
 	leftCard.src = hand[0].source;
-	rightCard.src = hand[1].source;
+  rightCard.src = hand[1].source;
+  getHandValue();
 }
 
 function getHandValue() {
-	let result = "";
+  handValue = "";
 	if (hand[0].value === hand[1].value) {
-		result += hand[0].value + hand[1].value;
-		return result;
+    handValue += hand[0].value + hand[1].value;
 	} else if (values.indexOf(hand[0].value) > values.indexOf(hand[1].value)) {
-		result += hand[0].value + hand[1].value;
+		handValue += hand[0].value + hand[1].value;
 		if (hand[0].suit === hand[1].suit) {
-			result += "s";
-		} else result += "o";
-		return result;
+			handValue += "s";
+		} else handValue += "o";
 	} else {
-		result += hand[1].value + hand[0].value;
+		handValue += hand[1].value + hand[0].value;
 		if (hand[0].suit === hand[1].suit) {
-			result += "s";
-		} else result += "o";
-		return result;
+			handValue += "s";
+		} else handValue += "o";
 	}
 }
 
 init();
-getHandValue();
+
