@@ -31,11 +31,11 @@ h2 {
 }
 
 .leftCard {
-	transform: translateX(30%);
+	transform: translateX(35%);
 }
 
 .rightCard {
-	transform: translateX(-30%);
+	transform: translateX(-35%);
 }
 
 .resultsMessage {
@@ -56,6 +56,5 @@ button {
 }
 
 #linkDiv {
-	display: flex;
 	margin-top: 10px;
 }

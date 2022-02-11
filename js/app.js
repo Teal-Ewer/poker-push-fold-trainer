@@ -21,13 +21,14 @@ const mainChart = [
 
 /*---------------------------- Variables (state) ----------------------------*/
 let deck = [];
+let hand = [];
 
 /*------------------------ Cached Element References ------------------------*/
 const dropdown = document.querySelector(".dropdown");
 const pushButton = document.querySelector("#pushButton");
 const foldButton = document.querySelector("#foldButton");
-
-console.dir(dropdown);
+const leftCard = document.querySelector(".leftCard");
+const rightCard = document.querySelector(".rightCard");
 
 /*----------------------------- Event Listeners -----------------------------*/
 dropdown.addEventListener("click", function (event) {
@@ -36,15 +37,19 @@ dropdown.addEventListener("click", function (event) {
 });
 
 dropdown.addEventListener("focusout", function (event) {
-  event.stopPropagation();
+	event.stopPropagation();
 	dropdown.classList.toggle("is-active");
 });
+
+pushButton.addEventListener("click", deal)
+foldButton.addEventListener("click", clear)
 
 /*-------------------------------- Functions --------------------------------*/
 class Card {
 	constructor(value, suit) {
 		this.value = value;
 		this.suit = suit;
+		this.url = `../images/${this.value}_of_${this.suit}.png`;
 	}
 }
 
@@ -56,4 +61,24 @@ function makeDeck() {
 	});
 }
 
+function deal() {
+  getRandomCard();
+  leftCard.src = hand[0].url;
+  rightCard.src = hand[1].url;
+}
+
+function getRandomCard() {
+  let card1 = deck[Math.floor(Math.random() * 52)];
+  let card2 = deck[Math.floor(Math.random() * 52)];
+  while (card1 === card2) {
+    card2 = deck[Math.floor(Math.random() * 52)];
+  }
+  hand.push(card1, card2)
+}
+
+function clear() {
+  hand = [];
+}
+
 makeDeck();
+deal();
