@@ -53,10 +53,9 @@ class Card {
 }
 
 function init() {
-  makeDeck();
-  deal();
+	makeDeck();
+	deal();
 }
-
 
 function makeDeck() {
 	deck = [];
@@ -68,12 +67,6 @@ function makeDeck() {
 }
 
 function deal() {
-	getRandomCard();
-	leftCard.src = hand[0].url;
-	rightCard.src = hand[1].url;
-}
-
-function getRandomCard() {
 	hand = [];
 	let card1 = deck[Math.floor(Math.random() * 52)];
 	let card2 = deck[Math.floor(Math.random() * 52)];
@@ -81,6 +74,8 @@ function getRandomCard() {
 		card2 = deck[Math.floor(Math.random() * 52)];
 	}
 	hand.push(card1, card2);
+	leftCard.src = hand[0].url;
+	rightCard.src = hand[1].url;
 }
 
 init();
