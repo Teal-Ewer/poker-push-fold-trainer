@@ -50,3 +50,12 @@ img {
 	width: 45%;
 	max-width: 250px;
 }
+
+button {
+	margin: 0 5px;
+}
+
+#linkDiv {
+	display: flex;
+	margin-top: 10px;
+}

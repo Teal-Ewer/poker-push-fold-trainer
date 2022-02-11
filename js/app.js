@@ -27,9 +27,16 @@ const dropdown = document.querySelector(".dropdown");
 const pushButton = document.querySelector("#pushButton");
 const foldButton = document.querySelector("#foldButton");
 
+console.dir(dropdown);
+
 /*----------------------------- Event Listeners -----------------------------*/
 dropdown.addEventListener("click", function (event) {
 	event.stopPropagation();
+	dropdown.classList.toggle("is-active");
+});
+
+dropdown.addEventListener("focusout", function (event) {
+  event.stopPropagation();
 	dropdown.classList.toggle("is-active");
 });
 
