@@ -25,4 +25,3 @@ function makeDeck() {
 }
 
 makeDeck();
-console.log(deck);
