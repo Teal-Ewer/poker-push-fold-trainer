@@ -44,7 +44,7 @@ const leftCard = document.querySelector(".leftCard");
 const rightCard = document.querySelector(".rightCard");
 
 // audio
-const dealCardSound = new Audio ("../audio/cardSlide7.wav")
+const dealCardSound = new Audio ("../audio/doubleCardSlide.mp3")
 
 /*----------------------------- Event Listeners -----------------------------*/
 dropdown.addEventListener("click", function (event) {
@@ -85,7 +85,6 @@ function makeDeck() {
 }
 
 function deal() {
-	playAudio(dealCardSound);
 	hand = [];
 	handValue = "";
 	let card1 = deck[Math.floor(Math.random() * 52)];
@@ -94,6 +93,7 @@ function deal() {
 		card2 = deck[Math.floor(Math.random() * 52)];
 	}
 	hand.push(card1, card2);
+	playAudio(dealCardSound);
 	leftCard.src = hand[0].source;
 	rightCard.src = hand[1].source;
 	getHandValue();
@@ -113,7 +113,7 @@ function getHandValue() {
 }
 
 function playAudio(sound) {
-	sound.volume = .1;
+	sound.volume = .35;
 	sound.play();
 }
 
