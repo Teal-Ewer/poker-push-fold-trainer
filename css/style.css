@@ -5,8 +5,7 @@ body {
 }
 
 h1 {
-	font-size: 2rem;
-	padding: 1rem;
+	font-size: 3rem;
 }
 
 h2 {
@@ -14,11 +13,11 @@ h2 {
 }
 
 .box {
-	width: 65%;
+	width: 50%;
 	max-width: 550px;
-	min-height: 80%;
+	height: 80%;
 	background-color: #e9ecef;
-	margin: 0 auto;
+	margin: 20px auto 0;
 	padding: 1rem;
 	border-radius: 10px;
 }
@@ -40,6 +39,7 @@ h2 {
 }
 
 .resultsMessage {
+	margin-top: 20px;
 	display: flex;
 	align-items: cener;
 	justify-content: center;
@@ -53,9 +53,18 @@ img {
 }
 
 #linkDiv {
-	margin-top: 10px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 1.25em;
+}
+
+a {
+	font-size: 1.2rem;
 }
 
 h3 {
-	font-size: 1.8rem;
+	margin-left: 35px;
+	font-size: 1.2rem;
 }

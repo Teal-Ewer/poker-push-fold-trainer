@@ -34,7 +34,8 @@ const mainChart = [
 const chart1 = ["AA", "AKs", "AQs", "AJs", "ATs", "A9s", "A8s", "A7s", "A6s", "A5s", "A4s", "A3s", "A2s", "AKo", "KK", "KQs", "KJs", "KTs", "K9s", "AQo", "KQo", "QQ", "QJs", "QTs", "Q9s", "AJo", "KJo", "JJ", "JTs", "J9s", "ATo", "TT", "T9s", "A9o", "99", "88", "77", "66", "55", "44", "33", "22"];
 
 /*---------------------------- Variables (state) ----------------------------*/
-let deck, hand, handValue;
+let deck, hand, handValue, score;
+let chartValue = chart1;
 
 /*------------------------ Cached Element References ------------------------*/
 const dropdown = document.querySelector(".dropdown");
@@ -43,9 +44,11 @@ const foldButton = document.querySelector("#foldButton");
 const leftCard = document.querySelector(".leftCard");
 const rightCard = document.querySelector(".rightCard");
 
-// audio
-const dealCardSound = new Audio ("../audio/doubleCardSlide.mp3")
+const scoreDisplay = document.querySelector(".score");
 
+// audio
+const dealCardSound = new Audio("../audio/doubleCardSlide.mp3");
+const correctChime = new Audio("../audio/correctChime.mp3")
 /*----------------------------- Event Listeners -----------------------------*/
 dropdown.addEventListener("click", function (event) {
 	event.stopPropagation();
@@ -59,7 +62,7 @@ dropdown.addEventListener("focusout", function (event) {
 
 pushButton.addEventListener("click", deal);
 
-foldButton.addEventListener("click", () => console.log(handValue));
+foldButton.addEventListener("click", isInChart);
 
 /*-------------------------------- Functions --------------------------------*/
 class Card {
@@ -71,6 +74,7 @@ class Card {
 }
 
 function init() {
+	score = 0;
 	makeDeck();
 	deal();
 }
@@ -113,8 +117,16 @@ function getHandValue() {
 	console.log(handValue);
 }
 
+function isInChart() {
+	if (chartValue.includes(handValue)) {
+		playAudio(correctChime);
+		score += 1;
+		scoreMessage.innerText = `Score : ${score}`;
+	} else alert("WRONG!!!");
+}
+
 function playAudio(sound) {
-	sound.volume = .5;
+	sound.volume = 0.6;
 	sound.play();
 }
 
