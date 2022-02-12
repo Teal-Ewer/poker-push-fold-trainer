@@ -48,8 +48,8 @@ const scoreDisplay = document.querySelector(".score");
 
 // audio
 const dealCardSound = new Audio("../audio/doubleCardSlide.mp3");
-const correctChime = new Audio("../audio/correctChime.mp3")
-const loseBuzzer = new Audio("../audio/loseBuzzer.mp3")
+const correctChime = new Audio("../audio/correctChime.mp3");
+const loseBuzzer = new Audio("../audio/loseBuzzer.mp3");
 /*----------------------------- Event Listeners -----------------------------*/
 dropdown.addEventListener("click", function (event) {
 	event.stopPropagation();
