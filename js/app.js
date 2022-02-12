@@ -43,6 +43,9 @@ const foldButton = document.querySelector("#foldButton");
 const leftCard = document.querySelector(".leftCard");
 const rightCard = document.querySelector(".rightCard");
 
+// audio
+const dealCardSound = new Audio ("../audio/cardSlide7.wav")
+
 /*----------------------------- Event Listeners -----------------------------*/
 dropdown.addEventListener("click", function (event) {
 	event.stopPropagation();
@@ -82,6 +85,7 @@ function makeDeck() {
 }
 
 function deal() {
+	playAudio(dealCardSound);
 	hand = [];
 	handValue = "";
 	let card1 = deck[Math.floor(Math.random() * 52)];
@@ -106,6 +110,11 @@ function getHandValue() {
 		handValue += hand[1].value + hand[0].value;
 		hand[0].suit === hand[1].suit ? (handValue += "s") : (handValue += "o");
 	}
+}
+
+function playAudio(sound) {
+	sound.volume = .1;
+	sound.play();
 }
 
 init();
