@@ -110,10 +110,11 @@ function getHandValue() {
 		handValue += hand[1].value + hand[0].value;
 		hand[0].suit === hand[1].suit ? (handValue += "s") : (handValue += "o");
 	}
+	console.log(handValue);
 }
 
 function playAudio(sound) {
-	sound.volume = .35;
+	sound.volume = .5;
 	sound.play();
 }
 

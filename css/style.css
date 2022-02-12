@@ -13,8 +13,9 @@ h2 {
 	font-size: 1.5rem;
 }
 
-.container {
-	width: 70%;
+.box {
+	width: 65%;
+	max-width: 550px;
 	min-height: 80%;
 	background-color: #e9ecef;
 	margin: 0 auto;
@@ -51,10 +52,10 @@ img {
 	max-width: 250px;
 }
 
-button {
-	margin: 0 5px;
-}
-
 #linkDiv {
 	margin-top: 10px;
+}
+
+h3 {
+	font-size: 1.8rem;
 }
