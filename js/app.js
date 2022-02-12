@@ -1,5 +1,6 @@
 /*-------------------------------- Constants --------------------------------*/
-let values = ["2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K", "A"];
+// prettier-ignore
+const values = ["2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K", "A"];
 const suits = ["spades", "hearts", "clubs", "diamonds"];
 
 // prettier-ignore
@@ -18,6 +19,19 @@ const mainChart = [
   ["A3o", "K3o", "Q3o", "J3o", "T3o", "93o", "83o", "73o", "63o", "53o", "43o", "33", "32s"],
   ["A2o", "K2o", "Q2o", "J2o", "T2o", "92o", "82o", "72o", "62o", "52o", "42o", "32o", "22"],
 ];
+
+// prettier-ignore
+// const chart1 = [
+//   [true, true, true, true, true, true, true, false, false, false, false, false],
+//   [true, true, true, true, true, false, false, false, false, false, false, false],
+//   [true, true, true, true, true, false, false, false, false, false, false, false],
+//   [true, false, false, true, true, false, false, false, false, false, false, false],
+//   [true, false, false, false, true, false, false, false, false, false, false, false],
+//   [false, false, false, false, false, true, false, false, false, false, false, false],
+// ]
+
+// prettier-ignore
+const chart1 = ["AA", "AKs", "AQs", "AJs", "ATs", "A9s", "A8s", "A7s", "A6s", "A5s", "A4s", "A3s", "A2s", "AKo", "KK", "KQs", "KJs", "KTs", "K9s", "AQo", "KQo", "QQ", "QJs", "QTs", "Q9s", "AJo", "KJo", "JJ", "JTs", "J9s", "ATo", "TT", "T9s", "A9o", "99", "88", "77", "66", "55", "44", "33", "22"];
 
 /*---------------------------- Variables (state) ----------------------------*/
 let deck, hand, handValue;
@@ -55,7 +69,7 @@ class Card {
 
 function init() {
 	makeDeck();
-  deal();
+	deal();
 }
 
 function makeDeck() {
@@ -68,8 +82,8 @@ function makeDeck() {
 }
 
 function deal() {
-  handValue = "";
 	hand = [];
+	handValue = "";
 	let card1 = deck[Math.floor(Math.random() * 52)];
 	let card2 = deck[Math.floor(Math.random() * 52)];
 	while (card1 === card2) {
@@ -77,26 +91,21 @@ function deal() {
 	}
 	hand.push(card1, card2);
 	leftCard.src = hand[0].source;
-  rightCard.src = hand[1].source;
-  getHandValue();
+	rightCard.src = hand[1].source;
+	getHandValue();
 }
 
 function getHandValue() {
-  handValue = "";
+	handValue = "";
 	if (hand[0].value === hand[1].value) {
-    handValue += hand[0].value + hand[1].value;
+		handValue += hand[0].value + hand[1].value;
 	} else if (values.indexOf(hand[0].value) > values.indexOf(hand[1].value)) {
 		handValue += hand[0].value + hand[1].value;
-		if (hand[0].suit === hand[1].suit) {
-			handValue += "s";
-		} else handValue += "o";
+		hand[0].suit === hand[1].suit ? (handValue += "s") : (handValue += "o");
 	} else {
 		handValue += hand[1].value + hand[0].value;
-		if (hand[0].suit === hand[1].suit) {
-			handValue += "s";
-		} else handValue += "o";
+		hand[0].suit === hand[1].suit ? (handValue += "s") : (handValue += "o");
 	}
 }
 
 init();
-
