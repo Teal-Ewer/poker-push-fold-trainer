@@ -121,7 +121,8 @@ function isInChart(bool) {
 	if (chartValue.includes(handValue) === bool) {
 		playAudio(correctChime);
 		score += 1;
-		deal();
+		scoreDisplay.innerText = `Score : ${score}`;
+		setTimeout(deal, 400);
 	} else {
 		playAudio(loseBuzzer);
 		score = 0;
