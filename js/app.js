@@ -49,6 +49,7 @@ const scoreDisplay = document.querySelector(".score");
 // audio
 const dealCardSound = new Audio("../audio/doubleCardSlide.mp3");
 const correctChime = new Audio("../audio/correctChime.mp3")
+const loseBuzzer = new Audio("../audio/loseBuzzer.mp3")
 /*----------------------------- Event Listeners -----------------------------*/
 dropdown.addEventListener("click", function (event) {
 	event.stopPropagation();
@@ -60,9 +61,8 @@ dropdown.addEventListener("focusout", function (event) {
 	dropdown.classList.toggle("is-active");
 });
 
-pushButton.addEventListener("click", deal);
-
-foldButton.addEventListener("click", isInChart);
+pushButton.addEventListener("click", () => isInChart(true));
+foldButton.addEventListener("click", () => isInChart(false));
 
 /*-------------------------------- Functions --------------------------------*/
 class Card {
@@ -75,6 +75,7 @@ class Card {
 
 function init() {
 	score = 0;
+	scoreDisplay.innerText = `Score : ${score}`;
 	makeDeck();
 	deal();
 }
@@ -114,15 +115,18 @@ function getHandValue() {
 		handValue += hand[1].value + hand[0].value;
 		hand[0].suit === hand[1].suit ? (handValue += "s") : (handValue += "o");
 	}
-	console.log(handValue);
 }
 
-function isInChart() {
-	if (chartValue.includes(handValue)) {
+function isInChart(bool) {
+	if (chartValue.includes(handValue) === bool) {
 		playAudio(correctChime);
 		score += 1;
-		scoreMessage.innerText = `Score : ${score}`;
-	} else alert("WRONG!!!");
+		deal();
+	} else {
+		playAudio(loseBuzzer);
+		score = 0;
+	}
+	scoreDisplay.innerText = `Score : ${score}`;
 }
 
 function playAudio(sound) {
