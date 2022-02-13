@@ -28,9 +28,24 @@
 		<script defer src="js/app.js"></script>
 	</head>
 	<body>
-		<i id="info" class="icon fas fa-info"></i>
 		<h1 class="pt-5" id="title">Poker | Push or Fold</h1>
 		<div class="box">
+			<article id="infoMessage" class="message is-hidden">
+				<div class="message-header">
+					<p>Hello World</p>
+					<button class="delete" aria-label="delete"></button>
+				</div>
+				<div class="message-body">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					<strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta
+					nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida
+					purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac
+					<em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et
+					sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi
+					magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales
+					sem.
+				</div>
+			</article>
 			<div class="dropdown block">
 				<div class="dropdown-trigger">
 					<button
@@ -68,6 +83,7 @@
 					</div>
 				</div>
 			</div>
+			<span id="info"> <i class="icon fas fa-info"></i></span>
 			<div class="cards block">
 				<img src="images/T_of_diamonds.png" alt="" class="leftCard" />
 				<img src="images/2_of_clubs.png" alt="" class="rightCard" />

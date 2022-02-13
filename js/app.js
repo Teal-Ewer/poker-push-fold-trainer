@@ -44,6 +44,8 @@ const foldButton = document.querySelector("#foldButton");
 const leftCard = document.querySelector(".leftCard");
 const rightCard = document.querySelector(".rightCard");
 const scoreDisplay = document.querySelector("#score");
+const infoIcon = document.querySelector("#info");
+const infoMessage = document.querySelector("#infoMessage");
 
 // audio
 const dealCardSound = new Audio("../audio/doubleCardSlide.mp3");
@@ -58,6 +60,10 @@ dropdown.addEventListener("click", function (event) {
 dropdown.addEventListener("focusout", function (event) {
 	event.stopPropagation();
 	dropdown.classList.toggle("is-active");
+});
+
+infoIcon.addEventListener("click", () => {
+	infoMessage.classList.toggle("is-hidden");
 });
 
 pushButton.addEventListener("click", () => isInChart(true));
