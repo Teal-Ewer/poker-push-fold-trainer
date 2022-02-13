@@ -125,7 +125,7 @@ function isInChart(bool) {
 		playAudio(loseBuzzer);
 		score = 0;
 	}
-	scoreDisplay.classList.remove("animate__animated", "animate__pulse");
+	scoreDisplay.classList.add("animate__animated", "animate__pulse");
 	scoreDisplay.innerText = `Score : ${score}`;
 }
 
