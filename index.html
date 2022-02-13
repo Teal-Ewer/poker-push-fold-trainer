@@ -33,7 +33,11 @@
 			<article id="infoMessage" class="message is-hidden is-secondary">
 				<div class="message-header">
 					<p>Poker Push/Fold Trainer (Memory Game):</p>
-					<button id="infoMessageButton" class="delete" aria-label="delete"></button>
+					<button
+						id="infoMessageButton"
+						class="delete"
+						aria-label="delete"
+					></button>
 				</div>
 				<div class="message-body">
 					<p class="block">
@@ -42,17 +46,15 @@
 						In these situations, the most profitable way to play is to use the
 						Push/Fold system. Simply put, if you have a good hand before the
 						flop (any community cards come out) you put all your chips in for a
-						chance to double up - if you lose the hand you are out of the
+						chance to double up - if you lose the hand you're out of the
 						tournament.
 					</p>
 					<p class="block">
-						Poker pros memorize charts that tell them what they should do when
-						put in this scenario. This game will help you test your memorization
-						of these charts by presenting you with a random poker hand and
-						giving you the chance to push or fold your stack. If you get 5 hands
-						right you will gain poker pro status and win the tournament! If you
-						get 5 hands wrong you’ll lose the game and be directed to the charts
-						to study more.
+						Poker pros memorize charts that tell them what they should do when put in a Push/Fold scenario. This game will help you test your memorization of these charts by presenting you with a random poker hand and
+						giving you the chance to push or fold your stack. If you get 10
+						hands in a row correct you will gain poker pro status and win the
+						tournament! If you get even 1 hand wrong you’ll lose the game and gently be
+						directed to the charts for a little more study.
 					</p>
 				</div>
 			</article>
@@ -98,8 +100,8 @@
 				<img src="images/T_of_diamonds.png" alt="" class="leftCard" />
 				<img src="images/2_of_clubs.png" alt="" class="rightCard" />
 			</div>
-			<div class="resultsMessage block">
-				<h2>This is the results message</h2>
+			<div class="resultsMessageDiv block">
+				<h2 id="resultsMessage">This is the results message</h2>
 			</div>
 			<div id="buttonDiv" class="block">
 				<button id="pushButton" class="button is-info px-6">Push</button>

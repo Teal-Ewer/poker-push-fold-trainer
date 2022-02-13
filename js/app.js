@@ -43,6 +43,7 @@ const pushButton = document.querySelector("#pushButton");
 const foldButton = document.querySelector("#foldButton");
 const leftCard = document.querySelector(".leftCard");
 const rightCard = document.querySelector(".rightCard");
+const resultsMessage = document.querySelector("#resultsMessage");
 const scoreDisplay = document.querySelector("#score");
 const infoIcon = document.querySelector("#info");
 const infoMessage = document.querySelector("#infoMessage");
@@ -102,6 +103,7 @@ function makeDeck() {
 function deal() {
 	hand = [];
 	handValue = "";
+	resultsMessage.innerText = "Choose a button below.";
 	let card1 = deck[Math.floor(Math.random() * 52)];
 	let card2 = deck[Math.floor(Math.random() * 52)];
 	while (card1 === card2) {
@@ -131,12 +133,14 @@ function isInChart(bool) {
 	if (chartValue.includes(handValue) === bool) {
 		playAudio(correctChime);
 		score += 1;
-		setTimeout(deal, 400);
+		resultsMessage.innerText = "You got it! Keep it up!";
+		setTimeout(deal, 1500);
 	} else {
 		playAudio(loseBuzzer);
+		resultsMessage.innerText = "Oh no!";
 		score = 0;
 	}
-	scoreDisplay.classList.add("animate__animated", "animate__pulse");
+	// scoreDisplay.classList.toggle("animate__animated", "animate__pulse");
 	scoreDisplay.innerText = `Score : ${score}`;
 }
 

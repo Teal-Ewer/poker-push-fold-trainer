@@ -45,7 +45,7 @@ h2 {
 	transform: translateX(-35%);
 }
 
-.resultsMessage {
+.resultsMessageDiv {
 	display: flex;
 	align-items: cener;
 	justify-content: center;
