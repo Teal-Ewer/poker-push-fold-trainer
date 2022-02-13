@@ -57,14 +57,14 @@ img {
 	max-width: 250px;
 }
 
-#linkDiv {
+.linkDiv {
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-a {
+#chartsLink {
 	font-size: 1.5rem;
 }
 
