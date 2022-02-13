@@ -31,11 +31,11 @@ const mainChart = [
 // ]
 
 // prettier-ignore
-const chart1 = ["AA", "AKs", "AQs", "AJs", "ATs", "A9s", "A8s", "A7s", "A6s", "A5s", "A4s", "A3s", "A2s", "AKo", "KK", "KQs", "KJs", "KTs", "K9s", "AQo", "KQo", "QQ", "QJs", "QTs", "Q9s", "AJo", "KJo", "JJ", "JTs", "J9s", "ATo", "TT", "T9s", "A9o", "99", "88", "77", "66", "55", "44", "33", "22"];
+const chart2 = ["AA", "AKs", "AQs", "AJs", "ATs", "A9s", "A8s", "A7s", "A6s", "A5s", "A4s", "A3s", "A2s", "AKo", "KK", "KQs", "KJs", "KTs", "K9s", "AQo", "KQo", "QQ", "QJs", "QTs", "Q9s", "AJo", "KJo", "JJ", "JTs", "J9s", "ATo", "TT", "T9s", "A9o", "99", "88", "77", "66", "55", "44", "33", "22"];
 
 /*---------------------------- Variables (state) ----------------------------*/
 let deck, hand, handValue, score;
-let chartValue = chart1;
+let chartValue = chart2;
 
 /*------------------------ Cached Element References ------------------------*/
 const dropdown = document.querySelector(".dropdown");
@@ -43,8 +43,7 @@ const pushButton = document.querySelector("#pushButton");
 const foldButton = document.querySelector("#foldButton");
 const leftCard = document.querySelector(".leftCard");
 const rightCard = document.querySelector(".rightCard");
-
-const scoreDisplay = document.querySelector(".score");
+const scoreDisplay = document.querySelector("#score");
 
 // audio
 const dealCardSound = new Audio("../audio/doubleCardSlide.mp3");
@@ -65,19 +64,19 @@ pushButton.addEventListener("click", () => isInChart(true));
 foldButton.addEventListener("click", () => isInChart(false));
 
 /*-------------------------------- Functions --------------------------------*/
+function init() {
+	score = 0;
+	scoreDisplay.innerText = `Score : ${score}`;
+	makeDeck();
+	deal();
+}
+
 class Card {
 	constructor(value, suit) {
 		this.value = value;
 		this.suit = suit;
 		this.source = `../images/${this.value}_of_${this.suit}.png`;
 	}
-}
-
-function init() {
-	score = 0;
-	scoreDisplay.innerText = `Score : ${score}`;
-	makeDeck();
-	deal();
 }
 
 function makeDeck() {
@@ -121,12 +120,12 @@ function isInChart(bool) {
 	if (chartValue.includes(handValue) === bool) {
 		playAudio(correctChime);
 		score += 1;
-		scoreDisplay.innerText = `Score : ${score}`;
 		setTimeout(deal, 400);
 	} else {
 		playAudio(loseBuzzer);
 		score = 0;
 	}
+	scoreDisplay.classList.remove("animate__animated", "animate__pulse");
 	scoreDisplay.innerText = `Score : ${score}`;
 }
 

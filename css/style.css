@@ -17,17 +17,9 @@ h2 {
 	max-width: 550px;
 	height: 80%;
 	background-color: #e9ecef;
-	margin: 20px auto 0;
+	margin: 0 auto;
 	padding: 1rem;
 	border-radius: 10px;
-}
-
-.dropdown {
-	margin-top: 1rem;
-}
-
-.cards {
-	margin-top: 1rem;
 }
 
 .leftCard {
@@ -39,15 +31,13 @@ h2 {
 }
 
 .resultsMessage {
-	margin-top: 20px;
 	display: flex;
 	align-items: cener;
 	justify-content: center;
-	min-height: 7rem;
+	min-height: 6rem;
 }
 
 img {
-	margin-top: 10px;
 	width: 45%;
 	max-width: 250px;
 }
@@ -57,14 +47,13 @@ img {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-top: 1.25em;
 }
 
 a {
-	font-size: 1.2rem;
+	font-size: 1.5rem;
 }
 
 h3 {
 	margin-left: 35px;
-	font-size: 1.2rem;
+	font-size: 1.5rem;
 }
