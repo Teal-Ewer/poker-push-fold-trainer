@@ -46,6 +46,7 @@ const rightCard = document.querySelector(".rightCard");
 const scoreDisplay = document.querySelector("#score");
 const infoIcon = document.querySelector("#info");
 const infoMessage = document.querySelector("#infoMessage");
+const infoMessageButton = document.querySelector("#infoMessageButton");
 
 // audio
 const dealCardSound = new Audio("../audio/doubleCardSlide.mp3");
@@ -63,6 +64,10 @@ dropdown.addEventListener("focusout", function (event) {
 });
 
 infoIcon.addEventListener("click", () => {
+	infoMessage.classList.toggle("is-hidden");
+});
+
+infoMessageButton.addEventListener("click", () => {
 	infoMessage.classList.toggle("is-hidden");
 });
 
