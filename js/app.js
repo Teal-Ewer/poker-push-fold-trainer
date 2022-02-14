@@ -101,8 +101,11 @@ const dropdownEl2 = document.querySelector("#dropdown-item2");
 const dropdownEl3 = document.querySelector("#dropdown-item3");
 const dropdownEl4 = document.querySelector("#dropdown-item4");
 const dropdownEl5 = document.querySelector("#dropdown-item5");
+const buttonDiv = document.querySelector("#button-div");
 const pushButton = document.querySelector("#pushButton");
 const foldButton = document.querySelector("#foldButton");
+const resetButtonDiv = document.querySelector("#reset-button-div");
+const resetButton = document.querySelector("#resetButton");
 const infoIcon = document.querySelector("#info");
 const infoMessageButton = document.querySelector("#infoMessageButton");
 
@@ -181,12 +184,15 @@ infoMessageButton.addEventListener("click", () => {
 
 pushButton.addEventListener("click", () => isInChart(true));
 foldButton.addEventListener("click", () => isInChart(false));
+resetButton.addEventListener("click", init);
 
 /*-------------------------------- Functions --------------------------------*/
 function init() {
 	score = 0;
 	scoreDisplay.innerText = `Score : ${score}`;
 	chartValue = chart1;
+	buttonDiv.classList.toggle("is-hidden");
+	resetButtonDiv.classList.toggle("is-hidden");
 	makeDeck();
 	deal();
 }
@@ -256,8 +262,9 @@ function renderCorrectGuess() {
 }
 
 function renderLoseMessage() {
+	buttonDiv.classList.toggle("is-hidden");
+	resetButtonDiv.classList.toggle("is-hidden");
 	playAudio(loseBuzzer);
-	score = 0;
 	resultsMessage.classList.add("animate__animated", "animate__headShake");
 	if (chartValue.includes(handValue)) {
 		resultsMessage.innerText = `Oh no! ${handValue} is in the selected range!`;
@@ -268,6 +275,8 @@ function renderLoseMessage() {
 }
 
 function renderWinMessage() {
+	buttonDiv.classList.toggle("is-hidden");
+	resetButtonDiv.classList.toggle("is-hidden");
 	playAudio(winningFanfare);
 	resultsMessage.classList.add("animate__animated", "animate__tada");
 	resultsMessage.innerText = "You won the tournament! You are a poker pro!";
