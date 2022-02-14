@@ -58,9 +58,14 @@ const chart4 = [
 	"Q8s", "Q7s", "Q6s", "AJo", "KJo", "QJo", "JJ", "JTs",
 	"J9s", "J8s", "J7s", "ATo", "KTo", "QTo", "JTo", "TT",
 	"T9s", "T8s", "T7s", "A9o", "K9o", "Q9o", "T9o", "99",
-	"98s", "97s", "A8o", "K8o", "88", "87s", "86s", "A7o", 
-	"K7o", "77", "76s", "A6o", "K6o", "66", "65s", "A5o", 
+	"98s", "97s", "A8o", "K8o", "88", "87s", "86s", "A7o",
+	"K7o", "77", "76s", "A6o", "K6o", "66", "65s", "A5o",
 	"55", "A4o", "44", "A3o", "33", "A2o", "22"
+];
+
+// prettier-ignore
+const chart5 = [
+	""
 ]
 
 /*---------------------------- Variables (state) ----------------------------*/
@@ -68,16 +73,21 @@ let deck, hand, handValue, score;
 let chartValue = chart2;
 
 /*------------------------ Cached Element References ------------------------*/
+// Buttons and Interactive elements
 const dropdown = document.querySelector(".dropdown");
 const pushButton = document.querySelector("#pushButton");
 const foldButton = document.querySelector("#foldButton");
+const infoIcon = document.querySelector("#info");
+const infoMessageButton = document.querySelector("#infoMessageButton");
+
+// Images
 const leftCard = document.querySelector(".leftCard");
 const rightCard = document.querySelector(".rightCard");
+
+// Text elements
 const resultsMessage = document.querySelector("#resultsMessage");
 const scoreDisplay = document.querySelector("#score");
-const infoIcon = document.querySelector("#info");
 const infoMessage = document.querySelector("#infoMessage");
-const infoMessageButton = document.querySelector("#infoMessageButton");
 
 // audio
 const dealCardSound = new Audio("../audio/doubleCardSlide.mp3");

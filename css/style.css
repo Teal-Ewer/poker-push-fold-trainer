@@ -65,16 +65,3 @@ img {
 	width: 45%;
 	max-width: 250px;
 }
-
-.linkDiv {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-#chartsLink {
-	font-size: 1.5rem;
-}
-
-
