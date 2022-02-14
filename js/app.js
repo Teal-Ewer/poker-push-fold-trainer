@@ -191,8 +191,10 @@ function init() {
 	score = 0;
 	scoreDisplay.innerText = `Score : ${score}`;
 	chartValue = chart1;
+	dropdownLabel.innerText = "Choose a seat position"
 	buttonDiv.classList.toggle("is-hidden");
 	resetButtonDiv.classList.toggle("is-hidden");
+	resetButton.classList.remove("is-warning", "is-success");
 	makeDeck();
 	deal();
 }
@@ -263,6 +265,7 @@ function renderCorrectGuess() {
 
 function renderLoseMessage() {
 	buttonDiv.classList.toggle("is-hidden");
+	resetButton.classList.add("is-warning");
 	resetButtonDiv.classList.toggle("is-hidden");
 	playAudio(loseBuzzer);
 	resultsMessage.classList.add("animate__animated", "animate__headShake");
@@ -276,10 +279,11 @@ function renderLoseMessage() {
 
 function renderWinMessage() {
 	buttonDiv.classList.toggle("is-hidden");
+	resetButton.classList.add("is-success");
 	resetButtonDiv.classList.toggle("is-hidden");
 	playAudio(winningFanfare);
 	resultsMessage.classList.add("animate__animated", "animate__tada");
-	resultsMessage.innerText = "You won the tournament! You are a poker pro!";
+	resultsMessage.innerText = "You won the tournament! You're a poker pro!";
 	scoreDisplay.innerText = `Score : ${score}`;
 }
 
