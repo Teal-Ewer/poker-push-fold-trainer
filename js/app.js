@@ -31,7 +31,13 @@ const mainChart = [
 // ]
 
 // prettier-ignore
+const chart1 = ["AA", "AKs", "AQs", "AJs", "ATs", "A9s", "A8s", "AKo", "KK", "KQs", "KJs", "KTs", "AQo", "KQo", "QQ", "QJs", "QTs", "AJo", "JJ", "JTs", "ATo", "TT", "99", "88", "77", "66", "55", "44"]
+
+// prettier-ignore
 const chart2 = ["AA", "AKs", "AQs", "AJs", "ATs", "A9s", "A8s", "A7s", "A6s", "A5s", "A4s", "A3s", "A2s", "AKo", "KK", "KQs", "KJs", "KTs", "K9s", "AQo", "KQo", "QQ", "QJs", "QTs", "Q9s", "AJo", "KJo", "JJ", "JTs", "J9s", "ATo", "TT", "T9s", "A9o", "99", "88", "77", "66", "55", "44", "33", "22"];
+
+// prettier-ignore
+const chart3 = ["AA", "AKs", "AQs", "AJs", "ATs", "A9s", "A8s", "A7s", "A6s", "A5s", "A4s", "A3s", "A2s", "AKo", "KK", "KQs", "KJs", "KTs", "K9s", "K8s", "K7s", "AQo", "KQo", "QQ", "QJs", "QTs", "Q9s", "AJo", "KJo", "QJo", "JJ", "JTs", "J9s", "J8s", "ATo", "KTo", "QTo", "JTo", "TT", "T9s", "T8s", "A9o", "99", "98s", "A8o", "88", "A7o", "77", "A6o", "66", "A5o", "55", "A4o", "44", "33", "22"];
 
 /*---------------------------- Variables (state) ----------------------------*/
 let deck, hand, handValue, score;
@@ -56,7 +62,7 @@ const loseBuzzer = new Audio("../audio/loseBuzzer.mp3");
 /*----------------------------- Event Listeners -----------------------------*/
 dropdown.addEventListener("click", function (event) {
 	event.stopPropagation();
-	dropdown.classList.toggle("is-active");
+	dropdown.classList.toggle("is-active"); // tried adding "is-focused"
 });
 
 dropdown.addEventListener("focusout", function (event) {
@@ -104,10 +110,10 @@ function deal() {
 	hand = [];
 	handValue = "";
 	resultsMessage.innerText = "Choose a button below.";
-	let card1 = deck[Math.floor(Math.random() * 52)];
-	let card2 = deck[Math.floor(Math.random() * 52)];
+	let card1 = getRandomCard();
+	let card2 = getRandomCard();
 	while (card1 === card2) {
-		card2 = deck[Math.floor(Math.random() * 52)];
+		card2 = getRandomCard();
 	}
 	hand.push(card1, card2);
 	playAudio(dealCardSound);
@@ -144,9 +150,14 @@ function isInChart(bool) {
 	scoreDisplay.innerText = `Score : ${score}`;
 }
 
+// Helper functions
 function playAudio(sound) {
 	sound.volume = 0.6;
 	sound.play();
+}
+
+function getRandomCard() {
+	return deck[Math.floor(Math.random() * 52)];
 }
 
 init();
