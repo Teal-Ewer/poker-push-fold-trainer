@@ -125,11 +125,11 @@ const loseBuzzer = new Audio("../audio/loseBuzzer.mp3");
 const winningFanfare = new Audio("../audio/winningFanfare.mp3");
 /*----------------------------- Event Listeners -----------------------------*/
 dropdown.addEventListener("click", function (event) {
-	event.stopPropagation();
+	// event.stopPropagation();
 	dropdown.classList.toggle("is-active"); // tried adding "is-focused"
 });
 
-// dropdown.addEventListener("focusout", function (event) {
+// dropdown.addEventListener("blur", function (event) {
 // 	event.stopPropagation();
 // 	dropdown.classList.toggle("is-active");
 // });
@@ -190,8 +190,6 @@ resetButton.addEventListener("click", init);
 function init() {
 	score = 0;
 	scoreDisplay.innerText = `Score : ${score}`;
-	chartValue = chart1;
-	dropdownLabel.innerText = "Choose a seat position"
 	buttonDiv.classList.toggle("is-hidden");
 	resetButtonDiv.classList.toggle("is-hidden");
 	resetButton.classList.remove("is-warning", "is-success");
@@ -247,6 +245,10 @@ function getHandValue() {
 }
 
 function isInChart(bool) {
+	if (!chartValue) {
+		chartValue = chart1;
+		dropdownLabel.innerText = "UTG and UTG+1";
+	}
 	if (chartValue.includes(handValue) === bool) {
 		score += 1;
 		score < 10 ? renderCorrectGuess() : renderWinMessage();
@@ -259,7 +261,7 @@ function renderCorrectGuess() {
 	playAudio(correctChime);
 	resultsMessage.classList.add("animate__animated", "animate__pulse");
 	resultsMessage.innerText = "You got it! Keep it up!";
-	setTimeout(deal, 1500);
+	setTimeout(deal, 1600);
 	scoreDisplay.innerText = `Score : ${score}`;
 }
 
