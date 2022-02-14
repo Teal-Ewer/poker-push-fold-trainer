@@ -16,6 +16,7 @@ body {
 	top: 0;
 	left: 0;
 	z-index: 1;
+	height: 100%;
 }
 
 h1 {
@@ -56,6 +57,10 @@ h2 {
 	min-height: 6rem;
 }
 
+#resultsMessage {
+	align-self: center;
+}
+
 img {
 	width: 45%;
 	max-width: 250px;
@@ -72,7 +77,4 @@ img {
 	font-size: 1.5rem;
 }
 
-h3 {
-	margin-left: 35px;
-	font-size: 1.5rem;
-}
+

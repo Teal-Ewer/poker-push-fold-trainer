@@ -34,8 +34,8 @@ const chart2 = [
 	"A6s", "A5s", "A4s", "A3s", "A2s", "AKo", "KK", "KQs",
 	"KJs", "KTs", "K9s", "AQo", "KQo", "QQ", "QJs", "QTs",
 	"Q9s", "AJo", "KJo", "JJ", "JTs", "J9s", "ATo", "TT",
-	"T9s", "A9o", "99", "88", "77", "66", "55", "44", "33",
-	"22"
+	"T9s", "A9o", "99", "88", "77", "66", "55", "44",
+	"33", "22"
 ];
 
 // prettier-ignore
@@ -131,6 +131,7 @@ function makeDeck() {
 }
 
 function deal() {
+	resultsMessage.classList = "";
 	hand = [];
 	handValue = "";
 	resultsMessage.innerText = "Choose a button below.";
@@ -163,14 +164,15 @@ function isInChart(bool) {
 	if (chartValue.includes(handValue) === bool) {
 		playAudio(correctChime);
 		score += 1;
+		resultsMessage.classList.add("animate__animated", "animate__pulse");
 		resultsMessage.innerText = "You got it! Keep it up!";
 		setTimeout(deal, 1500);
 	} else {
 		playAudio(loseBuzzer);
-		resultsMessage.innerText = "Oh no!";
 		score = 0;
+		resultsMessage.classList.add("animate__animated", "animate__headShake");
+		resultsMessage.innerText = "Oh no!";
 	}
-	// scoreDisplay.classList.toggle("animate__animated", "animate__pulse");
 	scoreDisplay.innerText = `Score : ${score}`;
 }
 
