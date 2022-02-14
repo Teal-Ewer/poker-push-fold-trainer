@@ -278,6 +278,7 @@ function renderLoseMessage() {
 }
 
 function renderWinMessage() {
+	setTimeout(() => confetti(), 2150);
 	buttonDiv.classList.toggle("is-hidden");
 	resetButton.classList.add("is-success");
 	resetButtonDiv.classList.toggle("is-hidden");
