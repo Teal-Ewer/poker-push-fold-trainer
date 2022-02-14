@@ -41,6 +41,10 @@ h2 {
 	text-align: left;
 }
 
+.dropdown-item {
+	cursor: pointer;
+}
+
 .cards {
 	width: 100%;
 }
