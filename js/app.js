@@ -119,6 +119,7 @@ const infoMessage = document.querySelector("#infoMessage");
 const dealCardSound = new Audio("../audio/doubleCardSlide.mp3");
 const correctChime = new Audio("../audio/correctChime.mp3");
 const loseBuzzer = new Audio("../audio/loseBuzzer.mp3");
+const winningFanfare = new Audio("../audio/winningFanfare.mp3");
 /*----------------------------- Event Listeners -----------------------------*/
 dropdown.addEventListener("click", function (event) {
 	event.stopPropagation();
@@ -133,31 +134,41 @@ dropdown.addEventListener("click", function (event) {
 dropdownEl1.addEventListener("click", function () {
 	chartValue = chart1;
 	dropdownLabel.innerText = dropdownEl1.innerText;
-	console.log(chartValue);
+	score = 0;
+	scoreDisplay.innerText = `Score : ${score}`;
+	deal();
 });
 
 dropdownEl2.addEventListener("click", function () {
 	chartValue = chart2;
 	dropdownLabel.innerText = dropdownEl2.innerText;
-	console.log(chartValue);
+	score = 0;
+	scoreDisplay.innerText = `Score : ${score}`;
+	deal();
 });
 
 dropdownEl3.addEventListener("click", function () {
 	chartValue = chart3;
 	dropdownLabel.innerText = dropdownEl3.innerText;
-	console.log(chartValue);
+	score = 0;
+	scoreDisplay.innerText = `Score : ${score}`;
+	deal();
 });
 
 dropdownEl4.addEventListener("click", function () {
 	chartValue = chart4;
 	dropdownLabel.innerText = dropdownEl4.innerText;
-	console.log(chartValue);
+	score = 0;
+	scoreDisplay.innerText = `Score : ${score}`;
+	deal();
 });
 
 dropdownEl5.addEventListener("click", function () {
 	chartValue = chart5;
 	dropdownLabel.innerText = dropdownEl5.innerText;
-	console.log(chartValue);
+	score = 0;
+	scoreDisplay.innerText = `Score : ${score}`;
+	deal();
 });
 
 infoIcon.addEventListener("click", () => {
@@ -229,20 +240,37 @@ function getHandValue() {
 
 function isInChart(bool) {
 	if (chartValue.includes(handValue) === bool) {
-		playAudio(correctChime);
 		score += 1;
-		resultsMessage.classList.add("animate__animated", "animate__pulse");
-		resultsMessage.innerText = "You got it! Keep it up!";
-		setTimeout(deal, 1500);
+		score < 10 ? renderCorrectGuess() : renderWinMessage();
 	} else {
-		playAudio(loseBuzzer);
-		score = 0;
-		resultsMessage.classList.add("animate__animated", "animate__headShake");
-		if (chartValue.includes(handValue)) {
-			resultsMessage.innerText = `Oh no! ${handValue} is in the selected range!`;
-		} else
-			resultsMessage.innerText = `Oh no! ${handValue} is not in the selected range!`;
+		renderLoseMessage();
 	}
+}
+
+function renderCorrectGuess() {
+	playAudio(correctChime);
+	resultsMessage.classList.add("animate__animated", "animate__pulse");
+	resultsMessage.innerText = "You got it! Keep it up!";
+	setTimeout(deal, 1500);
+	scoreDisplay.innerText = `Score : ${score}`;
+}
+
+function renderLoseMessage() {
+	playAudio(loseBuzzer);
+	score = 0;
+	resultsMessage.classList.add("animate__animated", "animate__headShake");
+	if (chartValue.includes(handValue)) {
+		resultsMessage.innerText = `Oh no! ${handValue} is in the selected range!`;
+	} else {
+		resultsMessage.innerText = `Oh no! ${handValue} is not in the selected range!`;
+	}
+	scoreDisplay.innerText = `Score : ${score}`;
+}
+
+function renderWinMessage() {
+	playAudio(winningFanfare);
+	resultsMessage.classList.add("animate__animated", "animate__tada");
+	resultsMessage.innerText = "You won the tournament! You are a poker pro!";
 	scoreDisplay.innerText = `Score : ${score}`;
 }
 
@@ -256,4 +284,5 @@ function getRandomCard() {
 	return deck[Math.floor(Math.random() * 52)];
 }
 
+// Starts the game when page loads
 init();
