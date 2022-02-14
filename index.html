@@ -59,14 +59,24 @@
 						that tell them what they should do when put in a Push/Fold
 						situation. This game will help you test your memorization of these
 						charts by presenting you with a random poker hand and giving you the
-						chance to push or fold your stack. If you get 10 hands in a row
-						correct you will gain poker pro status and win the tournament! If
-						you get even 1 hand wrong you’ll lose the game and gently be
-						directed to the charts for a little more study.
+						chance to push or fold your <b>10bb</b> stack. If you get 10 hands
+						in a row correct you will gain poker pro status and win the
+						tournament! If you get even 1 hand wrong you’ll lose the game and
+						gently be directed to the charts for a little more study.
 					</p>
 				</div>
 			</article>
-			<div class="dropdown block">
+			<div class="select block">
+				<select name="seat-select" id="seat-select">
+					<option value="chart1">Select a seat position</option>
+					<option value="chart1">UTG and UTG+1</option>
+					<option value="chart2">UTG+2 and Lojack</option>
+					<option value="chart3">Hijack</option>
+					<option value="chart4">Button and Cutoff</option>
+					<option value="chart5">Small Blind</option>
+				</select>
+			</div>
+			<!-- <div class="dropdown block">
 				<div class="dropdown-trigger">
 					<button
 						class="button"
@@ -102,7 +112,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 			<span id="info"> <i class="icon fas fa-info"></i></span>
 			<div class="cards block">
 				<img src="images/T_of_diamonds.png" alt="" class="leftCard" />

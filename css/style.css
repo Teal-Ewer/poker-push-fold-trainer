@@ -34,12 +34,15 @@ h2 {
 	height: 80%;
 	background-color: #e9ecef;
 	margin: 0 auto;
-	padding: 1rem;
 	border-radius: 10px;
 }
 
 .message {
 	text-align: left;
+}
+
+.cards {
+	width: 100%;
 }
 
 .leftCard {
@@ -54,7 +57,7 @@ h2 {
 	display: flex;
 	align-items: cener;
 	justify-content: center;
-	min-height: 6rem;
+	min-height: 4.5rem;
 }
 
 #resultsMessage {
@@ -65,3 +68,9 @@ img {
 	width: 45%;
 	max-width: 250px;
 }
+
+/* @media screen and (max-width: 900px) {
+	img {
+		width: 
+	}
+} */

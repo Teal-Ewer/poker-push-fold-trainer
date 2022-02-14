@@ -22,59 +22,80 @@ const mainChart = [
 
 // prettier-ignore
 const chart1 = [
-	"AA", "AKs", "AQs", "AJs", "ATs", "A9s", "A8s", "AKo",
-	"KK", "KQs", "KJs", "KTs", "AQo", "KQo", "QQ", "QJs",
-	"QTs", "AJo", "JJ", "JTs", "ATo", "TT", "99", "88",
-	"77", "66", "55", "44"
+	"AA", "AKs", "AQs", "AJs", "ATs", "A9s", "A8s",
+	"AKo", "KK", "KQs", "KJs", "KTs",
+	"AQo", "KQo", "QQ", "QJs", "QTs",
+	"AJo", "JJ", "JTs",
+	"ATo", "TT", "99", "88",
+	"77", "66","55", "44"
 ]
 
 // prettier-ignore
 const chart2 = [
-	"AA", "AKs", "AQs", "AJs", "ATs", "A9s", "A8s", "A7s",
-	"A6s", "A5s", "A4s", "A3s", "A2s", "AKo", "KK", "KQs",
-	"KJs", "KTs", "K9s", "AQo", "KQo", "QQ", "QJs", "QTs",
-	"Q9s", "AJo", "KJo", "JJ", "JTs", "J9s", "ATo", "TT",
-	"T9s", "A9o", "99", "88", "77", "66", "55", "44",
-	"33", "22"
+	"AA", "AKs", "AQs", "AJs", "ATs", "A9s", "A8s", "A7s", "A6s", "A5s", "A4s", "A3s", "A2s",
+	"AKo", "KK", "KQs", "KJs", "KTs", "K9s",
+	"AQo", "KQo", "QQ", "QJs", "QTs", "Q9s",
+	"AJo", "KJo", "JJ", "JTs", "J9s",
+	"ATo", "TT", "T9s",
+	"A9o", "99", "88", "77", "66", "55", "44", "33", "22"
 ];
 
 // prettier-ignore
 const chart3 = [
-	"AA", "AKs", "AQs", "AJs", "ATs", "A9s", "A8s", "A7s",
-	"A6s", "A5s", "A4s", "A3s", "A2s", "AKo", "KK", "KQs",
-	"KJs", "KTs", "K9s", "K8s", "K7s", "AQo", "KQo", "QQ",
-	"QJs", "QTs", "Q9s", "AJo", "KJo", "QJo", "JJ", "JTs",
-	"J9s", "J8s", "ATo", "KTo", "QTo", "JTo", "TT", "T9s",
-	"T8s", "A9o", "99", "98s", "A8o", "88", "A7o", "77",
-	"A6o", "66", "A5o", "55", "A4o", "44", "33", "22"
+	"AA", "AKs", "AQs", "AJs", "ATs", "A9s", "A8s", "A7s", "A6s", "A5s", "A4s", "A3s", "A2s",
+	"AKo", "KK", "KQs", "KJs", "KTs", "K9s", "K8s", "K7s",
+	"AQo", "KQo", "QQ", "QJs", "QTs", "Q9s",
+	"AJo", "KJo", "QJo", "JJ", "JTs", "J9s", "J8s",
+	"ATo", "KTo", "QTo", "JTo", "TT", "T9s", "T8s",
+	"A9o", "99", "98s",
+	"A8o", "88",
+	"A7o", "77",
+	"A6o", "66",
+	"A5o", "55",
+	"A4o", "44", "33", "22"
 ];
 
 // prettier-ignore
 const chart4 = [
-	"AA", "AKs", "AQs", "AJs", "ATs", "A9s", "A8s", "A7s",
-	"A6s", "A5s", "A4s", "A3s", "A2s", "AKo", "KK", "KQs",
-	"KJs", "KTs", "K9s", "K8s", "K7s", "K6s", "K5s", "K4s",
-	"K3s", "K2s", "AQo", "KQo", "QQ", "QJs", "QTs", "Q9s",
-	"Q8s", "Q7s", "Q6s", "AJo", "KJo", "QJo", "JJ", "JTs",
-	"J9s", "J8s", "J7s", "ATo", "KTo", "QTo", "JTo", "TT",
-	"T9s", "T8s", "T7s", "A9o", "K9o", "Q9o", "T9o", "99",
-	"98s", "97s", "A8o", "K8o", "88", "87s", "86s", "A7o",
-	"K7o", "77", "76s", "A6o", "K6o", "66", "65s", "A5o",
-	"55", "A4o", "44", "A3o", "33", "A2o", "22"
+	"AA", "AKs", "AQs", "AJs", "ATs", "A9s", "A8s", "A7s", "A6s", "A5s", "A4s", "A3s", "A2s",
+	"AKo", "KK", "KQs", "KJs", "KTs", "K9s", "K8s", "K7s", "K6s", "K5s", "K4s", "K3s", "K2s",
+	"AQo", "KQo", "QQ", "QJs", "QTs", "Q9s", "Q8s", "Q7s", "Q6s",
+	"AJo", "KJo", "QJo", "JJ", "JTs", "J9s", "J8s", "J7s",
+	"ATo", "KTo", "QTo", "JTo", "TT", "T9s", "T8s", "T7s",
+	"A9o", "K9o", "Q9o", "T9o", "99", "98s", "97s",
+	"A8o", "K8o", "88", "87s", "86s",
+	"A7o", "K7o", "77", "76s",
+	"A6o", "K6o", "66", "65s",
+	"A5o", "55",
+	"A4o", "44",
+	"A3o", "33",
+	"A2o", "22"
 ];
 
 // prettier-ignore
 const chart5 = [
-	""
+	"AA", "AKs", "AQs", "AJs", "ATs", "A9s", "A8s", "A7s", "A6s", "A5s", "A4s", "A3s", "A2s", 
+	"AKo", "KK", "KQs", "KJs", "KTs", "K9s", "K8s", "K7s",  "K6s", "K5s", "K4s", "K3s", "K2s", 
+	"AQo", "KQo", "QQ", "QJs", "QTs", "Q9s", "Q8s", "Q7s", "Q6s", "Q5s", "Q4s", "Q3s", "Q2s", 
+	"AJo", "KJo", "QJo", "JJ", "JTs", "J9s", "J8s", "J7s", "J6s", "J5s", "J4s", "J3s", "J2s",
+	"ATo", "KTo", "QTo", "JTo", "TT", "T9s", "T8s", "T7s", "T6s", "T5s", "T4s", "T3s", 
+	"A9o", "K9o", "Q9o", "J9o", "T9o", "99", "98s", "97s", "96s", "95s",
+	"A8o", "K8o", "Q8o", "J8o", "T8o", "98o", "88", "87s", "86s", "85s", "84s",
+	"A7o", "K7o", "Q7o", "J7o", "T7o", "97o", "87o", "77", "76s", "75s", "74s",
+	"A6o", "K6o", "Q6o", "J6o", "86o", "76o", "66", "65s", "64s", 
+	"A5o", "K5o", "Q5o", "Q5o", "55", "54s", "53s",
+	"A4o", "K4o", "Q4o", "44", "43s",
+	"A3o", "K3o", "Q3o", "33",
+	"A2o", "K2o", "Q2o", "22"
 ]
 
 /*---------------------------- Variables (state) ----------------------------*/
-let deck, hand, handValue, score;
-let chartValue = chart2;
+let deck, hand, handValue, score, chartValue;
 
 /*------------------------ Cached Element References ------------------------*/
 // Buttons and Interactive elements
-const dropdown = document.querySelector(".dropdown");
+//const dropdown = document.querySelector(".dropdown");
+const seatSelect = document.querySelector("#seat-select");
 const pushButton = document.querySelector("#pushButton");
 const foldButton = document.querySelector("#foldButton");
 const infoIcon = document.querySelector("#info");
@@ -94,14 +115,18 @@ const dealCardSound = new Audio("../audio/doubleCardSlide.mp3");
 const correctChime = new Audio("../audio/correctChime.mp3");
 const loseBuzzer = new Audio("../audio/loseBuzzer.mp3");
 /*----------------------------- Event Listeners -----------------------------*/
-dropdown.addEventListener("click", function (event) {
-	event.stopPropagation();
-	dropdown.classList.toggle("is-active"); // tried adding "is-focused"
-});
+// dropdown.addEventListener("click", function (event) {
+// 	event.stopPropagation();
+// 	dropdown.classList.toggle("is-active"); // tried adding "is-focused"
+// });
 
-dropdown.addEventListener("focusout", function (event) {
-	event.stopPropagation();
-	dropdown.classList.toggle("is-active");
+// dropdown.addEventListener("focusout", function (event) {
+// 	event.stopPropagation();
+// 	dropdown.classList.toggle("is-active");
+// });
+
+seatSelect.addEventListener("change", () => {
+	chartValue = seatSelect.value;
 });
 
 infoIcon.addEventListener("click", () => {
@@ -119,6 +144,7 @@ foldButton.addEventListener("click", () => isInChart(false));
 function init() {
 	score = 0;
 	scoreDisplay.innerText = `Score : ${score}`;
+	chartValue = chart1;
 	makeDeck();
 	deal();
 }
@@ -181,14 +207,17 @@ function isInChart(bool) {
 		playAudio(loseBuzzer);
 		score = 0;
 		resultsMessage.classList.add("animate__animated", "animate__headShake");
-		resultsMessage.innerText = "Oh no!";
+		if (chartValue.includes(handValue)) {
+			resultsMessage.innerText = `Oh no! ${handValue} is in the selected range!`;
+		} else
+			resultsMessage.innerText = `Oh no! ${handValue} is not in the selected range!`;
 	}
 	scoreDisplay.innerText = `Score : ${score}`;
 }
 
 // Helper functions
 function playAudio(sound) {
-	sound.volume = 0.6;
+	sound.volume = 0.5;
 	sound.play();
 }
 
