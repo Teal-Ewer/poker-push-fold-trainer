@@ -109,7 +109,6 @@ dropdownItems.forEach(item => {
 		if (e.target.id === "dropdown-item5") {
 			chartValue = chart5;
 		}
-		console.log(chartValue, e.target.id);
 		dropdownLabel.innerText = e.target.innerText;
 		score = 0;
 		scoreDisplay.innerText = `Score : ${score}`;
