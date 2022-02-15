@@ -29,9 +29,8 @@ h2 {
 
 .box {
 	position: relative;
-	width: 50%;
-	max-width: 550px;
-	height: 80%;
+	width: 550px;
+	height: 700px;
 	background-color: #e9ecef;
 	margin: 0 auto;
 	border-radius: 10px;
@@ -61,7 +60,7 @@ h2 {
 	display: flex;
 	align-items: cener;
 	justify-content: center;
-	min-height: 4.5rem;
+	height: 6rem;
 }
 
 #resultsMessage {

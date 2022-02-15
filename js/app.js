@@ -118,7 +118,7 @@ const resultsMessage = document.querySelector("#resultsMessage");
 const scoreDisplay = document.querySelector("#score");
 const infoMessage = document.querySelector("#infoMessage");
 
-// audio
+// Audio
 const dealCardSound = new Audio("../audio/doubleCardSlide.mp3");
 const correctChime = new Audio("../audio/correctChime.mp3");
 const loseBuzzer = new Audio("../audio/loseBuzzer.mp3");
@@ -267,6 +267,7 @@ function renderCorrectGuess() {
 
 function renderLoseMessage() {
 	buttonDiv.classList.toggle("is-hidden");
+	resetButton.innerText = "Try Again";
 	resetButton.classList.add("is-warning");
 	resetButtonDiv.classList.toggle("is-hidden");
 	playAudio(loseBuzzer);
@@ -281,6 +282,7 @@ function renderLoseMessage() {
 
 function renderWinMessage() {
 	setTimeout(() => confetti(), 2150);
+	resetButton.innerText = "Play Again";
 	buttonDiv.classList.toggle("is-hidden");
 	resetButton.classList.add("is-success");
 	resetButtonDiv.classList.toggle("is-hidden");
