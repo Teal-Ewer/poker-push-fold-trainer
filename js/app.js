@@ -12,21 +12,21 @@ const chart1 = [
 ]
 
 // prettier-ignore
-//(42 items long)
+//(42 items long total)
 const chart2 = chart1.concat([
 	"A7s", "A6s", "A5s", "A4s", "A3s", "A2s", "K9s", "Q9s", "KJo", "J9s",
 	"T9s", "A9o", "33", "22"
 ]);
 
 // prettier-ignore
-// (56 items long)
+// (56 items long total)
 const chart3 = chart2.concat([
 	"K8s", "K7s", "QJo", "J8s", "KTo", "QTo", "JTo", "T8s", "98s", "A8o", 
 	"A7o", "A6o", "A5o", "A4o" 
 ]);
 
 // prettier-ignore
-// (79 items long)
+// (79 items long total)
 const chart4 = chart3.concat([
 	"K6s", "K5s", "K4s", "K3s", "K2s", "Q8s", "Q7s", "Q6s", "J7s", "T7s",
 	"K9o", "Q9o", "T9o", "97s", "K8o", "87s", "86s", "K7o", "76s", "K6o",
@@ -62,13 +62,15 @@ const dropdownEl2 = document.querySelector("#dropdown-item2");
 const dropdownEl3 = document.querySelector("#dropdown-item3");
 const dropdownEl4 = document.querySelector("#dropdown-item4");
 const dropdownEl5 = document.querySelector("#dropdown-item5");
-const buttonDiv = document.querySelector("#button-div");
 const pushButton = document.querySelector("#pushButton");
 const foldButton = document.querySelector("#foldButton");
-const resetButtonDiv = document.querySelector("#reset-button-div");
 const resetButton = document.querySelector("#resetButton");
 const infoIcon = document.querySelector("#info");
 const infoMessageButton = document.querySelector("#infoMessageButton");
+
+// Divs
+const buttonDiv = document.querySelector("#button-div");
+const resetButtonDiv = document.querySelector("#reset-button-div");
 
 // Images
 const leftCard = document.querySelector(".leftCard");
@@ -150,7 +152,7 @@ resetButton.addEventListener("click", init);
 /*-------------------------------- Functions --------------------------------*/
 function init() {
 	score = 0;
-	scoreDisplay.innerText = `Score : ${score}`;
+	updateScore();
 	buttonDiv.classList.toggle("is-hidden");
 	resetButtonDiv.classList.toggle("is-hidden");
 	resetButton.classList.remove("is-warning", "is-success");
@@ -223,7 +225,7 @@ function renderCorrectGuess() {
 	resultsMessage.classList.add("animate__animated", "animate__pulse");
 	resultsMessage.innerText = "You got it! Keep it up!";
 	setTimeout(deal, 1600);
-	scoreDisplay.innerText = `Score : ${score}`;
+	updateScore();
 }
 
 function renderLoseMessage() {
@@ -251,7 +253,7 @@ function renderWinMessage() {
 	resetButtonDiv.classList.toggle("is-hidden");
 	resultsMessage.classList.add("animate__animated", "animate__tada");
 	resultsMessage.innerText = "You won the tournament! You're a poker pro!";
-	scoreDisplay.innerText = `Score : ${score}`;
+	updateScore();
 }
 
 // Helper functions
@@ -262,6 +264,10 @@ function playAudio(sound) {
 
 function getRandomCard() {
 	return deck[Math.floor(Math.random() * 52)];
+}
+
+function updateScore() {
+	scoreDisplay.innerText = `Score : ${score}`;
 }
 
 // Starts the game when page loads
