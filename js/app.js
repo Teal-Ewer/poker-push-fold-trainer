@@ -129,7 +129,7 @@ dropdown.addEventListener("click", function (event) {
 	dropdown.classList.toggle("is-active"); // tried adding "is-focused"
 });
 
-// dropdown.addEventListener("blur", function (event) {
+// dropdown.addEventListener("focusout", function (event) {
 // 	event.stopPropagation();
 // 	dropdown.classList.toggle("is-active");
 // });
@@ -281,12 +281,13 @@ function renderLoseMessage() {
 }
 
 function renderWinMessage() {
-	setTimeout(() => confetti(), 2150);
+	playAudio(correctChime);
+	setTimeout(() => playAudio(winningFanfare), 700);
+	setTimeout(() => confetti(), 2850);
 	resetButton.innerText = "Play Again";
 	buttonDiv.classList.toggle("is-hidden");
 	resetButton.classList.add("is-success");
 	resetButtonDiv.classList.toggle("is-hidden");
-	playAudio(winningFanfare);
 	resultsMessage.classList.add("animate__animated", "animate__tada");
 	resultsMessage.innerText = "You won the tournament! You're a poker pro!";
 	scoreDisplay.innerText = `Score : ${score}`;
