@@ -31,14 +31,14 @@ const chart1 = [
 ]
 
 // prettier-ignore
-const chart2 = [
-	"AA", "AKs", "AQs", "AJs", "ATs", "A9s", "A8s", "A7s", "A6s", "A5s", "A4s", "A3s", "A2s",
-	"AKo", "KK", "KQs", "KJs", "KTs", "K9s",
-	"AQo", "KQo", "QQ", "QJs", "QTs", "Q9s",
-	"AJo", "KJo", "JJ", "JTs", "J9s",
-	"ATo", "TT", "T9s",
-	"A9o", "99", "88", "77", "66", "55", "44", "33", "22"
-];
+const chart2 = chart1.concat([
+	"A7s", "A6s", "A5s", "A4s", "A3s", "A2s",
+	"K9s",
+	"Q9s",
+	"KJo", "J9s",
+	"T9s",
+	"A9o", "33", "22"
+]);
 
 // prettier-ignore
 const chart3 = [
