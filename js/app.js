@@ -1,4 +1,5 @@
 /*-------------------------------- Constants --------------------------------*/
+
 // prettier-ignore
 const values = ["2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K", "A"];
 const suits = ["spades", "hearts", "clubs", "diamonds"];
@@ -51,18 +52,15 @@ const chart5 = [
 ]
 
 /*---------------------------- Variables (state) ----------------------------*/
+
 let deck, hand, handValue, score, chartValue;
 
 /*------------------------ Cached Element References ------------------------*/
+
 // Buttons and Interactive elements
 const dropdown = document.querySelector(".dropdown");
 const dropdownLabel = document.querySelector("#dropdown-label");
 const dropdownItems = document.querySelectorAll(".dropdown-item");
-// const dropdownEl1 = document.querySelector("#dropdown-item1");
-// const dropdownEl2 = document.querySelector("#dropdown-item2");
-// const dropdownEl3 = document.querySelector("#dropdown-item3");
-// const dropdownEl4 = document.querySelector("#dropdown-item4");
-// const dropdownEl5 = document.querySelector("#dropdown-item5");
 const pushButton = document.querySelector("#pushButton");
 const foldButton = document.querySelector("#foldButton");
 const resetButton = document.querySelector("#resetButton");
@@ -87,9 +85,10 @@ const dealCardSound = new Audio("../audio/doubleCardSlide.mp3");
 const correctChime = new Audio("../audio/correctChime.mp3");
 const loseBuzzer = new Audio("../audio/loseBuzzer.mp3");
 const winningFanfare = new Audio("../audio/winningFanfare.mp3");
+
 /*----------------------------- Event Listeners -----------------------------*/
-dropdown.addEventListener("click", function (event) {
-	// event.stopPropagation();
+
+dropdown.addEventListener("click", () => {
 	dropdown.classList.toggle("is-active");
 });
 
@@ -110,53 +109,13 @@ dropdownItems.forEach(item => {
 		if (e.target.id === "dropdown-item5") {
 			chartValue = chart5;
 		}
-		console.log(chartValue);
+		console.log(chartValue, e.target.id);
 		dropdownLabel.innerText = e.target.innerText;
 		score = 0;
 		scoreDisplay.innerText = `Score : ${score}`;
 		deal();
 	});
 });
-
-// dropdownEl1.addEventListener("click", function () {
-// 	chartValue = chart1;
-// 	dropdownLabel.innerText = dropdownEl1.innerText;
-// 	score = 0;
-// 	scoreDisplay.innerText = `Score : ${score}`;
-// 	deal();
-// });
-
-// dropdownEl2.addEventListener("click", function () {
-// 	chartValue = chart2;
-// 	dropdownLabel.innerText = dropdownEl2.innerText;
-// 	score = 0;
-// 	scoreDisplay.innerText = `Score : ${score}`;
-// 	deal();
-// });
-
-// dropdownEl3.addEventListener("click", function () {
-// 	chartValue = chart3;
-// 	dropdownLabel.innerText = dropdownEl3.innerText;
-// 	score = 0;
-// 	scoreDisplay.innerText = `Score : ${score}`;
-// 	deal();
-// });
-
-// dropdownEl4.addEventListener("click", function () {
-// 	chartValue = chart4;
-// 	dropdownLabel.innerText = dropdownEl4.innerText;
-// 	score = 0;
-// 	scoreDisplay.innerText = `Score : ${score}`;
-// 	deal();
-// });
-
-// dropdownEl5.addEventListener("click", function () {
-// 	chartValue = chart5;
-// 	dropdownLabel.innerText = dropdownEl5.innerText;
-// 	score = 0;
-// 	scoreDisplay.innerText = `Score : ${score}`;
-// 	deal();
-// });
 
 infoIcon.addEventListener("click", () => {
 	infoMessage.classList.toggle("is-hidden");
@@ -171,6 +130,7 @@ foldButton.addEventListener("click", () => isInChart(false));
 resetButton.addEventListener("click", init);
 
 /*-------------------------------- Functions --------------------------------*/
+
 function init() {
 	score = 0;
 	updateScore();
