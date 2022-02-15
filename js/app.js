@@ -57,11 +57,12 @@ let deck, hand, handValue, score, chartValue;
 // Buttons and Interactive elements
 const dropdown = document.querySelector(".dropdown");
 const dropdownLabel = document.querySelector("#dropdown-label");
-const dropdownEl1 = document.querySelector("#dropdown-item1");
-const dropdownEl2 = document.querySelector("#dropdown-item2");
-const dropdownEl3 = document.querySelector("#dropdown-item3");
-const dropdownEl4 = document.querySelector("#dropdown-item4");
-const dropdownEl5 = document.querySelector("#dropdown-item5");
+const dropdownItems = document.querySelectorAll(".dropdown-item");
+// const dropdownEl1 = document.querySelector("#dropdown-item1");
+// const dropdownEl2 = document.querySelector("#dropdown-item2");
+// const dropdownEl3 = document.querySelector("#dropdown-item3");
+// const dropdownEl4 = document.querySelector("#dropdown-item4");
+// const dropdownEl5 = document.querySelector("#dropdown-item5");
 const pushButton = document.querySelector("#pushButton");
 const foldButton = document.querySelector("#foldButton");
 const resetButton = document.querySelector("#resetButton");
@@ -89,53 +90,73 @@ const winningFanfare = new Audio("../audio/winningFanfare.mp3");
 /*----------------------------- Event Listeners -----------------------------*/
 dropdown.addEventListener("click", function (event) {
 	// event.stopPropagation();
-	dropdown.classList.toggle("is-active"); // tried adding "is-focused"
+	dropdown.classList.toggle("is-active");
 });
 
-// dropdown.addEventListener("focusout", function (event) {
-// 	event.stopPropagation();
-// 	dropdown.classList.toggle("is-active");
+dropdownItems.forEach(item => {
+	item.addEventListener("click", function (e) {
+		if (e.target.id === "dropdown-item1") {
+			chartValue = chart1;
+		}
+		if (e.target.id === "dropdown-item2") {
+			chartValue = chart2;
+		}
+		if (e.target.id === "dropdown-item3") {
+			chartValue = chart3;
+		}
+		if (e.target.id === "dropdown-item4") {
+			chartValue = chart4;
+		}
+		if (e.target.id === "dropdown-item5") {
+			chartValue = chart5;
+		}
+		console.log(chartValue);
+		dropdownLabel.innerText = e.target.innerText;
+		score = 0;
+		scoreDisplay.innerText = `Score : ${score}`;
+		deal();
+	});
+});
+
+// dropdownEl1.addEventListener("click", function () {
+// 	chartValue = chart1;
+// 	dropdownLabel.innerText = dropdownEl1.innerText;
+// 	score = 0;
+// 	scoreDisplay.innerText = `Score : ${score}`;
+// 	deal();
 // });
 
-dropdownEl1.addEventListener("click", function () {
-	chartValue = chart1;
-	dropdownLabel.innerText = dropdownEl1.innerText;
-	score = 0;
-	scoreDisplay.innerText = `Score : ${score}`;
-	deal();
-});
+// dropdownEl2.addEventListener("click", function () {
+// 	chartValue = chart2;
+// 	dropdownLabel.innerText = dropdownEl2.innerText;
+// 	score = 0;
+// 	scoreDisplay.innerText = `Score : ${score}`;
+// 	deal();
+// });
 
-dropdownEl2.addEventListener("click", function () {
-	chartValue = chart2;
-	dropdownLabel.innerText = dropdownEl2.innerText;
-	score = 0;
-	scoreDisplay.innerText = `Score : ${score}`;
-	deal();
-});
+// dropdownEl3.addEventListener("click", function () {
+// 	chartValue = chart3;
+// 	dropdownLabel.innerText = dropdownEl3.innerText;
+// 	score = 0;
+// 	scoreDisplay.innerText = `Score : ${score}`;
+// 	deal();
+// });
 
-dropdownEl3.addEventListener("click", function () {
-	chartValue = chart3;
-	dropdownLabel.innerText = dropdownEl3.innerText;
-	score = 0;
-	scoreDisplay.innerText = `Score : ${score}`;
-	deal();
-});
+// dropdownEl4.addEventListener("click", function () {
+// 	chartValue = chart4;
+// 	dropdownLabel.innerText = dropdownEl4.innerText;
+// 	score = 0;
+// 	scoreDisplay.innerText = `Score : ${score}`;
+// 	deal();
+// });
 
-dropdownEl4.addEventListener("click", function () {
-	chartValue = chart4;
-	dropdownLabel.innerText = dropdownEl4.innerText;
-	score = 0;
-	scoreDisplay.innerText = `Score : ${score}`;
-	deal();
-});
-
-dropdownEl5.addEventListener("click", function () {
-	chartValue = chart5;
-	dropdownLabel.innerText = dropdownEl5.innerText;
-	score = 0;
-	scoreDisplay.innerText = `Score : ${score}`;
-	deal();
-});
+// dropdownEl5.addEventListener("click", function () {
+// 	chartValue = chart5;
+// 	dropdownLabel.innerText = dropdownEl5.innerText;
+// 	score = 0;
+// 	scoreDisplay.innerText = `Score : ${score}`;
+// 	deal();
+// });
 
 infoIcon.addEventListener("click", () => {
 	infoMessage.classList.toggle("is-hidden");
