@@ -5,48 +5,43 @@ const values = ["2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K", "A"]
 const suits = ["spades", "hearts", "clubs", "diamonds"];
 
 // prettier-ignore
-// (28 items long)
+// (28 items long) checked
 const chart1 = [
 	"AA", "AKs", "AQs", "AJs", "ATs", "A9s", "A8s", "AKo", "KK", "KQs",
 	"KJs", "KTs", "AQo", "KQo", "QQ", "QJs", "QTs", "AJo", "JJ", "JTs",
-	"ATo", "TT", "99", "88", "77", "66", "55", "44"
+	"ATo", "TT", "99", "88", "77", "66", "55", "44",
 ]
 
 // prettier-ignore
-//(42 items long total)
+//(42 items long total) checked
 const chart2 = chart1.concat([
 	"A7s", "A6s", "A5s", "A4s", "A3s", "A2s", "K9s", "Q9s", "KJo", "J9s",
-	"T9s", "A9o", "33", "22"
+	"T9s", "A9o", "33", "22",
 ]);
 
 // prettier-ignore
-// (56 items long total)
+// (56 items long total) checked
 const chart3 = chart2.concat([
 	"K8s", "K7s", "QJo", "J8s", "KTo", "QTo", "JTo", "T8s", "98s", "A8o", 
-	"A7o", "A6o", "A5o", "A4o" 
+	"A7o", "A6o", "A5o", "A4o" ,
 ]);
 
 // prettier-ignore
-// (79 items long total)
+// (79 items long total) checked
 const chart4 = chart3.concat([
 	"K6s", "K5s", "K4s", "K3s", "K2s", "Q8s", "Q7s", "Q6s", "J7s", "T7s",
 	"K9o", "Q9o", "T9o", "97s", "K8o", "87s", "86s", "K7o", "76s", "K6o",
-	"65s", "A3o", "A2o"
+	"65s", "A3o", "A2o",
 ]);
 
 // prettier-ignore
+// (124 items long total) checked
 const chart5 = chart4.concat([ 
-	"Q5s", "Q4s", "Q3s", "Q2s", 
-	"AJo", "KJo", "QJo", "JJ", "JTs", "J9s", "J8s", "J7s", "J6s", "J5s", "J4s", "J3s", "J2s",
-	"ATo", "KTo", "QTo", "JTo", "TT", "T9s", "T8s", "T7s", "T6s", "T5s", "T4s", "T3s", 
-	"A9o", "K9o", "Q9o", "J9o", "T9o", "99", "98s", "97s", "96s", "95s",
-	"A8o", "K8o", "Q8o", "J8o", "T8o", "98o", "88", "87s", "86s", "85s", "84s",
-	"A7o", "K7o", "Q7o", "J7o", "T7o", "97o", "87o", "77", "76s", "75s", "74s",
-	"A6o", "K6o", "Q6o", "J6o", "86o", "76o", "66", "65s", "64s", 
-	"A5o", "K5o", "Q5o", "Q5o", "55", "54s", "53s",
-	"A4o", "K4o", "Q4o", "44", "43s",
-	"A3o", "K3o", "Q3o", "33",
-	"A2o", "K2o", "Q2o", "22"
+	"Q5s", "Q4s", "Q3s", "Q2s", "J6s", "J5s", "J4s", "J3s", "J2s", "T6s",
+	"T5s", "T4s", "T3s", "J9o", "96s", "95s", "Q8o", "J8o", "T8o", "98o",
+	"85s", "84s", "Q7o", "J7o", "T7o", "97o", "87o", "75s", "74s", "Q6o",
+	"J6o", "86o", "76o", "64s", "K5o", "Q5o", "54s", "53s", "K4o", "Q4o",
+	"43s", "K3o", "Q3o", "K2o", "Q2o",
 ])
 
 /*---------------------------- Variables (state) ----------------------------*/
@@ -86,7 +81,7 @@ const winningFanfare = new Audio("../audio/winningFanfare.mp3");
 
 /*----------------------------- Event Listeners -----------------------------*/
 
-dropdown.addEventListener("click", (e) => {
+dropdown.addEventListener("click", e => {
 	e.stopPropagation();
 	dropdown.classList.toggle("is-active");
 });
