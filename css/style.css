@@ -29,11 +29,15 @@ h2 {
 
 .box {
 	position: relative;
-	width: 550px;
-	height: 85%;
+	max-width: 550px;
+	height: auto;
 	background-color: #e9ecef;
 	margin: 0 auto;
 	border-radius: 10px;
+}
+
+.dropdown {
+	margin: 0 auto;
 }
 
 .message {
@@ -58,9 +62,8 @@ h2 {
 
 .resultsMessageDiv {
 	display: flex;
-	align-items: cener;
+	align-items: center;
 	justify-content: center;
-	min-height: 7rem;
 }
 
 #resultsMessage {
@@ -71,9 +74,3 @@ img {
 	width: 45%;
 	max-width: 250px;
 }
-
-/* @media screen and (max-width: 900px) {
-	img {
-		width: 
-	}
-} */
