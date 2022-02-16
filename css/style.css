@@ -66,10 +66,6 @@ h2 {
 	justify-content: center;
 }
 
-#resultsMessage {
-	align-self: center;
-}
-
 img {
 	width: 45%;
 	max-width: 250px;
@@ -79,5 +75,9 @@ img {
 	#info {
 		top: 20px;
 		right: 30px;
+	}
+
+	#infoMessage {
+		font-size: 0.85rem;
 	}
 }

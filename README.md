@@ -28,6 +28,6 @@ Losing Screen
 
 ## Technologies Used:
 
-I built this project using HTML, CSS, JavaScript, Bulma, Animate.css, and canvas-confetti. It is deployed to Netlify.
+I built this project using HTML, CSS, JavaScript, Bulma, Font Awesome, Animate.css, and canvas-confetti. It is deployed to Netlify.
 
 ## Next Steps:

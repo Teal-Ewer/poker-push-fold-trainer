@@ -5,7 +5,6 @@ const values = ["2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K", "A"]
 const suits = ["spades", "hearts", "clubs", "diamonds"];
 
 // prettier-ignore
-// (28 items long) checked
 const chart1 = [
 	"AA", "AKs", "AQs", "AJs", "ATs", "A9s", "A8s", "AKo", "KK", "KQs",
 	"KJs", "KTs", "AQo", "KQo", "QQ", "QJs", "QTs", "AJo", "JJ", "JTs",
@@ -13,21 +12,18 @@ const chart1 = [
 ]
 
 // prettier-ignore
-//(42 items long total) checked
 const chart2 = chart1.concat([
 	"A7s", "A6s", "A5s", "A4s", "A3s", "A2s", "K9s", "Q9s", "KJo", "J9s",
 	"T9s", "A9o", "33", "22",
 ]);
 
 // prettier-ignore
-// (56 items long total) checked
 const chart3 = chart2.concat([
 	"K8s", "K7s", "QJo", "J8s", "KTo", "QTo", "JTo", "T8s", "98s", "A8o", 
 	"A7o", "A6o", "A5o", "A4o" ,
 ]);
 
 // prettier-ignore
-// (79 items long total) checked
 const chart4 = chart3.concat([
 	"K6s", "K5s", "K4s", "K3s", "K2s", "Q8s", "Q7s", "Q6s", "J7s", "T7s",
 	"K9o", "Q9o", "T9o", "97s", "K8o", "87s", "86s", "K7o", "76s", "K6o",
@@ -35,7 +31,6 @@ const chart4 = chart3.concat([
 ]);
 
 // prettier-ignore
-// (124 items long total) checked
 const chart5 = chart4.concat([ 
 	"Q5s", "Q4s", "Q3s", "Q2s", "J6s", "J5s", "J4s", "J3s", "J2s", "T6s",
 	"T5s", "T4s", "T3s", "J9o", "96s", "95s", "Q8o", "J8o", "T8o", "98o",
@@ -205,7 +200,17 @@ function isInChart(bool) {
 function renderCorrectGuess() {
 	playAudio(correctChime);
 	resultsMessage.classList.add("animate__animated", "animate__pulse");
-	resultsMessage.innerText = "You got it! Keep it up!";
+	if (score < 3) {
+		resultsMessage.innerText = "You got it! Keep it up!";
+	} else if (score < 5) {
+		resultsMessage.innerText = "Keep up the good work!";
+	} else if (score === 5) {
+		resultsMessage.innerText = "Halfway there!";
+	} else if (score < 8) {
+		resultsMessage.innerText = "Just a few more!";
+	} else if (score === 8) {
+		resultsMessage.innerText = "So close! You can do it!";
+	} else resultsMessage.innerText = "Last one!";
 	setTimeout(deal, 1600);
 	renderScore();
 }
