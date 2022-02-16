@@ -74,3 +74,10 @@ img {
 	width: 45%;
 	max-width: 250px;
 }
+
+@media only screen and (max-width: 550px) {
+	#info {
+		top: 20px;
+		right: 30px;
+	}
+}

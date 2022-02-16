@@ -109,10 +109,15 @@ dropdownItems.forEach(item => {
 		if (e.target.id === "dropdown-item5") {
 			chartValue = chart5;
 		}
-		dropdownLabel.innerText = e.target.innerText;
-		score = 0;
-		scoreDisplay.innerText = `Score : ${score}`;
-		deal();
+		if (buttonDiv.classList.contains("is-hidden")) {
+			dropdownLabel.innerText = e.target.innerText;
+			init();
+		} else {
+			score = 0;
+			dropdownLabel.innerText = e.target.innerText;
+			updateScore();
+			deal();
+		}
 	});
 });
 
@@ -175,7 +180,6 @@ function deal() {
 }
 
 function getHandValue() {
-	handValue = "";
 	if (hand[0].value === hand[1].value) {
 		handValue += hand[0].value + hand[1].value;
 	} else if (values.indexOf(hand[0].value) > values.indexOf(hand[1].value)) {
@@ -220,7 +224,7 @@ function renderLoseMessage() {
 	} else {
 		resultsMessage.innerText = `Oh no! ${handValue} is not in the selected range!`;
 	}
-	scoreDisplay.innerText = `Score : ${score}`;
+	updateScore();
 }
 
 function renderWinMessage() {
