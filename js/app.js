@@ -86,11 +86,14 @@ const winningFanfare = new Audio("../audio/winningFanfare.mp3");
 
 /*----------------------------- Event Listeners -----------------------------*/
 
-dropdown.addEventListener("click", () => {
+dropdown.addEventListener("click", (e) => {
+	e.stopPropagation();
 	dropdown.classList.toggle("is-active");
 });
 
-// I need to check for other click events while dropdown.classList.contains("is-active")
+// document.addEventListener("click", () => {
+// 	dropdown.classList.remove("is-active");
+// })
 
 dropdownItems.forEach(item => {
 	item.addEventListener("click", function (e) {
