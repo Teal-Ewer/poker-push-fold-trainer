@@ -115,7 +115,7 @@ dropdownItems.forEach(item => {
 		} else {
 			score = 0;
 			dropdownLabel.innerText = e.target.innerText;
-			updateScore();
+			renderScore();
 			deal();
 		}
 	});
@@ -137,7 +137,7 @@ resetButton.addEventListener("click", init);
 
 function init() {
 	score = 0;
-	updateScore();
+	renderScore();
 	buttonDiv.classList.toggle("is-hidden");
 	resetButtonDiv.classList.toggle("is-hidden");
 	resetButton.classList.remove("is-warning", "is-success");
@@ -209,7 +209,7 @@ function renderCorrectGuess() {
 	resultsMessage.classList.add("animate__animated", "animate__pulse");
 	resultsMessage.innerText = "You got it! Keep it up!";
 	setTimeout(deal, 1600);
-	updateScore();
+	renderScore();
 }
 
 function renderLoseMessage() {
@@ -224,7 +224,7 @@ function renderLoseMessage() {
 	} else {
 		resultsMessage.innerText = `Oh no! ${handValue} is not in the selected range!`;
 	}
-	updateScore();
+	renderScore();
 }
 
 function renderWinMessage() {
@@ -237,7 +237,7 @@ function renderWinMessage() {
 	resetButtonDiv.classList.toggle("is-hidden");
 	resultsMessage.classList.add("animate__animated", "animate__tada");
 	resultsMessage.innerText = "You won the tournament! You're a poker pro!";
-	updateScore();
+	renderScore();
 }
 
 // Helper functions
@@ -250,7 +250,7 @@ function getRandomCard() {
 	return deck[Math.floor(Math.random() * 52)];
 }
 
-function updateScore() {
+function renderScore() {
 	scoreDisplay.innerText = `Score : ${score}`;
 }
 
