@@ -41,7 +41,7 @@ const chart5 = chart4.concat([
 
 /*---------------------------- Variables (state) ----------------------------*/
 
-let deck, hand, handValue, score, chartValue;
+let deck, hand, handValue, score, chartValue, isActive, handsPlayed;
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -81,9 +81,9 @@ dropdown.addEventListener("click", e => {
 	dropdown.classList.toggle("is-active");
 });
 
-// document.addEventListener("click", () => {
-// 	dropdown.classList.remove("is-active");
-// })
+document.addEventListener("click", () => {
+	dropdown.classList.remove("is-active");
+});
 
 dropdownItems.forEach(item => {
 	item.addEventListener("click", function (e) {
@@ -244,13 +244,16 @@ function renderWinMessage() {
 }
 
 // Helper functions
-function playAudio(sound) {
-	sound.volume = 0.5;
-	sound.play();
-}
-
 function getRandomCard() {
 	return deck[Math.floor(Math.random() * 52)];
+}
+
+function playAudio(sound) {
+// This line checks if the user has interacted with the page before playing audio
+	if (chartValue) {
+		sound.volume = 0.5;
+		sound.play();
+	} else return;
 }
 
 function renderScore() {
