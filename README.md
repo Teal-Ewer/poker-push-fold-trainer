@@ -16,15 +16,15 @@ Here are a few screenshots of gameplay:
 
 Main Screen
 
-![Main Screen](https://i.imgur.com/29YLxT4.png)
-
-Winning Screen
-
-![Winning Screen](https://i.imgur.com/XVPSV5g.png)
+![Main Screen](https://i.imgur.com/RllPCfZ.png)
 
 Losing Screen
 
-![Losing](https://i.imgur.com/Mwmy5Pk.png)
+![Losing](https://i.imgur.com/kdOebfq.png)
+
+Winning Screen
+
+![Winning Screen](./images/winning-confetti.gif)
 
 ## Technologies Used:
 
