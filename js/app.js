@@ -207,7 +207,7 @@ function renderCorrectGuess() {
 	} else if (score === 5) {
 		resultsMessage.innerText = "Halfway there!";
 	} else if (score < 8) {
-		resultsMessage.innerText = "Just a few more!";
+		resultsMessage.innerText = "You got it! Keep it up!";
 	} else if (score === 8) {
 		resultsMessage.innerText = "So close! You can do it!";
 	} else resultsMessage.innerText = "Last one!";
@@ -249,7 +249,7 @@ function getRandomCard() {
 }
 
 function playAudio(sound) {
-// This line checks if the user has interacted with the page before playing audio
+	// This line checks if the user has interacted with the page before playing audio
 	if (chartValue) {
 		sound.volume = 0.5;
 		sound.play();
