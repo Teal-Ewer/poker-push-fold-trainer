@@ -36,6 +36,6 @@ I built this project using HTML, CSS, JavaScript, Bulma, Font Awesome, Animate.c
 
 ## Next Steps:
 
-This aplication could be used to test the user's knowledge of any poker chart, not just Push/Fold charts. In future updates, I'd like to add more charts anduser inputs to select those charts.
+This application could be used to test the user's knowledge of any poker chart, not just Push/Fold charts. In future updates I'd like to add more charts and user inputs to select those charts.
 
-I would also like to add the ability for the user to mute the audio and choose light or dark mode.
+I also plan to add the ability for the user to mute the audio and choose light or dark mode.

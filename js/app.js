@@ -41,7 +41,7 @@ const chart5 = chart4.concat([
 
 /*---------------------------- Variables (state) ----------------------------*/
 
-let deck, hand, handValue, score, chartValue;
+let deck, hand, handValue, chartValue, score;
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -114,13 +114,8 @@ dropdownItems.forEach(item => {
 	});
 });
 
-infoIcon.addEventListener("click", () => {
-	infoMessage.classList.toggle("is-hidden");
-});
-
-infoMessageButton.addEventListener("click", () => {
-	infoMessage.classList.toggle("is-hidden");
-});
+infoIcon.addEventListener("click", toggleInfoMessage);
+infoMessageButton.addEventListener("click", toggleInfoMessage);
 
 pushButton.addEventListener("click", () => isInChart(true));
 foldButton.addEventListener("click", () => isInChart(false));
@@ -209,8 +204,8 @@ function renderCorrectGuess() {
 	} else if (score < 8) {
 		resultsMessage.innerText = "You got it! Keep it up!";
 	} else if (score === 8) {
-		resultsMessage.innerText = "So close! You can do it!";
-	} else resultsMessage.innerText = "Last one!";
+		resultsMessage.innerText = "Almost there! You can do it!";
+	} else resultsMessage.innerText = "Only one more!";
 	setTimeout(deal, 1600);
 	renderScore();
 }
@@ -258,6 +253,10 @@ function playAudio(sound) {
 
 function renderScore() {
 	scoreDisplay.innerText = `Score : ${score}`;
+}
+
+function toggleInfoMessage() {
+	infoMessage.classList.toggle("is-hidden");
 }
 
 // Starts the game when page loads
