@@ -1,10 +1,8 @@
-# Poker | Push or Fold Memory Game:
+# Poker | Push or Fold Memory Game
 
 If you play enough poker tournaments, you will find yourself in a “short-stack” situation where your tournament life is on the line. In these scenarios, the most profitable way to play is to use the Push/Fold system. Simply put, if you have a good hand before the flop (any community cards come out) you put all your chips in for a chance to double up - if you lose the hand you're out of the tournament.
 
-Poker pros memorize [charts](https://upswingpoker.com/push-fold-tournament-strategy-charts/) that tell them what they should do when put in a Push/Fold situation. This game will help you test your memorization of these charts by presenting you with a random poker hand and giving you the chance to push or fold your chip stack. If you get 10 hands in a row correct you will gain poker pro status and win the tournament! If you get even 1 hand wrong you’ll lose the game and be booted from the tournament!
-
-I built this application
+Poker pros memorize [charts](https://upswingpoker.com/push-fold-tournament-strategy-charts/) that tell them what they should do when put in a Push/Fold situation. This game will help you test your memorization of these charts by presenting you with a random poker hand and giving you the chance to push or fold your chip stack. If you get 10 hands in a row correct you will gain poker pro status and win the tournament! If you get even 1 hand wrong you will lose the game.
 
 ## Getting Started:
 
@@ -14,28 +12,35 @@ I built this application
 
 Here are a few screenshots of gameplay:
 
-Original Wireframe
+Original wireframe concept
 
-![Original Wireframe](https://i.imgur.com/9W1w5Ks.png)
+<img src="./images/wireframe.png" width="600px">
 
 Main Screen
 
-![Main Screen](https://i.imgur.com/RllPCfZ.png)
+<img src="./images/main-screen.png" width="600px">
 
 Losing Screen
 
-![Losing](https://i.imgur.com/kdOebfq.png)
+<img src="./images/losing-screen.png" width="600px">
 
 Winning Screen
 
-![Winning Screen](./images/winning-confetti.gif)
+<img src="./images/winning-screen.gif" width="600px">
 
 ## Technologies Used:
 
-I built this project using HTML, CSS, JavaScript, Bulma, Font Awesome, Animate.css, and canvas-confetti. It is deployed to Netlify.
+1. HTML
+2. CSS
+3. JavaScript
+4. Bulma
+5. Animate.css
+6. canvas-confetti
+7. Netlify
+8. CI/CD
 
 ## Next Steps:
 
-This application could be used to test the user's knowledge of any poker chart, not just Push/Fold charts. In future updates I'd like to add more charts and user inputs to select those charts.
+This application could be used to test the user's knowledge of any poker chart, not just Push/Fold charts. In future updates I'd like to add other types of charts as well as user inputs to account for multiple poker scenarios.
 
-I also plan to add the ability for the user to mute the audio and choose light or dark mode.
+I plan to add the ability for the user to mute the game audio and choose a light or dark mode.
