@@ -41,7 +41,7 @@ const chart5 = chart4.concat([
 
 /*---------------------------- Variables (state) ----------------------------*/
 
-let deck, hand, handValue, score, chartValue, isActive, handsPlayed;
+let deck, hand, handValue, score, chartValue;
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -238,7 +238,7 @@ function renderWinMessage() {
 	buttonDiv.classList.toggle("is-hidden");
 	resetButton.classList.add("is-success");
 	resetButtonDiv.classList.toggle("is-hidden");
-	resultsMessage.classList.add("animate__animated", "animate__tada");
+	resultsMessage.classList.add("animate__animated", "animate__fadeInDown");
 	resultsMessage.innerText = "You won the tournament! You're a poker pro!";
 	renderScore();
 }

@@ -4,6 +4,8 @@ If you play enough poker tournaments, you will find yourself in a “short-stack
 
 Poker pros memorize [charts](https://upswingpoker.com/push-fold-tournament-strategy-charts/) that tell them what they should do when put in a Push/Fold situation. This game will help you test your memorization of these charts by presenting you with a random poker hand and giving you the chance to push or fold your chip stack. If you get 10 hands in a row correct you will gain poker pro status and win the tournament! If you get even 1 hand wrong you’ll lose the game and be booted from the tournament!
 
+I built this application
+
 ## Getting Started:
 
 [This link will take you to the deployed game.](https://elated-carson-819d6b.netlify.app/) You can begin the game by selecting a seat position from the dropdown menu then pressing either the Push or the Fold button. If you press a button before selecting a seat you will be given the default seat of "UTG and UTG+1."
@@ -11,6 +13,10 @@ Poker pros memorize [charts](https://upswingpoker.com/push-fold-tournament-strat
 ## Screenshots:
 
 Here are a few screenshots of gameplay:
+
+Original Wireframe
+
+![Original Wireframe](https://i.imgur.com/9W1w5Ks.png)
 
 Main Screen
 
@@ -30,6 +36,6 @@ I built this project using HTML, CSS, JavaScript, Bulma, Font Awesome, Animate.c
 
 ## Next Steps:
 
-This aplication could test the user's knowledge of any poker chart, not just Push/Fold charts. In future updates, I'd like to add more chart features
+This aplication could be used to test the user's knowledge of any poker chart, not just Push/Fold charts. In future updates, I'd like to add more charts anduser inputs to select those charts.
 
-I would also like to add the ability for the user to mute the audio and add choose light mode or dark mode.
+I would also like to add the ability for the user to mute the audio and choose light or dark mode.
