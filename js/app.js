@@ -5,6 +5,7 @@ const values = ["2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K", "A"]
 const suits = ["spades", "hearts", "clubs", "diamonds"];
 
 // prettier-ignore
+// 28 combinations total
 const chart1 = [
 	"AA", "AKs", "AQs", "AJs", "ATs", "A9s", "A8s", "AKo", "KK", "KQs",
 	"KJs", "KTs", "AQo", "KQo", "QQ", "QJs", "QTs", "AJo", "JJ", "JTs",
@@ -31,6 +32,7 @@ const chart4 = chart3.concat([
 ]);
 
 // prettier-ignore
+// 124 combinations total
 const chart5 = chart4.concat([
 	"Q5s", "Q4s", "Q3s", "Q2s", "J6s", "J5s", "J4s", "J3s", "J2s", "T6s",
 	"T5s", "T4s", "T3s", "J9o", "96s", "95s", "Q8o", "J8o", "T8o", "98o",
@@ -124,16 +126,6 @@ resetButton.addEventListener("click", init);
 
 /*-------------------------------- Functions --------------------------------*/
 
-function init() {
-	score = 0;
-	renderScore();
-	buttonDiv.classList.toggle("is-hidden");
-	resetButtonDiv.classList.toggle("is-hidden");
-	resetButton.classList.remove("is-warning", "is-success");
-	makeDeck();
-	deal();
-}
-
 class Card {
 	constructor(value, suit) {
 		this.value = value;
@@ -149,6 +141,15 @@ function makeDeck() {
 			deck.push(new Card(value, suit));
 		});
 	});
+}
+
+function init() {
+	score = 0;
+	renderScore();
+	buttonDiv.classList.toggle("is-hidden");
+	resetButtonDiv.classList.toggle("is-hidden");
+	resetButton.classList.remove("is-warning", "is-success");
+	deal();
 }
 
 function deal() {
@@ -181,7 +182,7 @@ function getHandValue() {
 }
 
 function isInChart(bool) {
-	// Assigns default seat position if user doesn't select one
+	// Assigns default chart if user doesn't select a seat
 	if (!chartValue) {
 		chartValue = chart1;
 		dropdownLabel.innerText = "UTG and UTG+1";
@@ -207,7 +208,7 @@ function renderCorrectGuess() {
 		resultsMessage.innerText = "You got it! Keep it up!";
 	} else if (score === 8) {
 		resultsMessage.innerText = "Almost there! You can do it!";
-	} else resultsMessage.innerText = "Only one more!";
+	} else resultsMessage.innerText = "The prize is in sight!";
 	setTimeout(deal, 1600);
 	renderScore();
 }
@@ -219,11 +220,9 @@ function renderLoseMessage() {
 	resetButtonDiv.classList.toggle("is-hidden");
 	playAudio(loseBuzzer);
 	resultsMessage.classList.add("animate__animated", "animate__headShake");
-	if (chartValue.includes(handValue)) {
-		resultsMessage.innerText = `Oh no! ${handValue} is in the selected range!`;
-	} else {
-		resultsMessage.innerText = `Oh no! ${handValue} is not in the selected range!`;
-	}
+	resultsMessage.innerText = chartValue.includes(handValue)
+		? `Oh no! ${handValue} is in the selected range!`
+		: `Oh no! ${handValue} is not in the selected range!`;
 	renderScore();
 }
 
@@ -261,5 +260,6 @@ function toggleInfoMessage() {
 	infoMessage.classList.toggle("is-hidden");
 }
 
-// Starts the game when page loads
+// Builds the game and starts the game when page loads
+makeDeck();
 init();
