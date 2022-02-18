@@ -14,19 +14,19 @@ Here are a few screenshots of gameplay:
 
 Original wireframe concept
 
-<img src="./images/wireframe.png" width="600px">
+<img src="./images/wireframe.png" alt="Game Wireframe" width="600px">
 
 Main Screen
 
-<img src="./images/main-screen.png" width="600px">
+<img src="./images/main-screen.png" alt="Game Main Screen" width="600px">
 
 Losing Screen
 
-<img src="./images/losing-screen.png" width="600px">
+<img src="./images/losing-screen.png" alt="Game Lose Screen" width="600px">
 
 Winning Screen
 
-<img src="./images/winning-screen.gif" width="600px">
+<img src="./images/winning-screen.gif" alt="Game Win Screen" width="600px">
 
 ## Technologies Used:
 
@@ -41,6 +41,6 @@ Winning Screen
 
 ## Next Steps:
 
-This application could be used to test the user's knowledge of any poker chart, not just Push/Fold charts. In future updates I'd like to add other types of charts as well as user inputs to account for multiple poker scenarios.
+This application could be used to test the user's knowledge of any poker chart, not just Push/Fold charts. In future updates I'd like to add other chart sets and more user inputs to account for new poker scenarios.
 
 I plan to add the ability for the user to mute the game audio and choose a light or dark mode.

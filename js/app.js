@@ -9,7 +9,7 @@ const chart1 = [
 	"AA", "AKs", "AQs", "AJs", "ATs", "A9s", "A8s", "AKo", "KK", "KQs",
 	"KJs", "KTs", "AQo", "KQo", "QQ", "QJs", "QTs", "AJo", "JJ", "JTs",
 	"ATo", "TT", "99", "88", "77", "66", "55", "44",
-]
+];
 
 // prettier-ignore
 const chart2 = chart1.concat([
@@ -20,7 +20,7 @@ const chart2 = chart1.concat([
 // prettier-ignore
 const chart3 = chart2.concat([
 	"K8s", "K7s", "QJo", "J8s", "KTo", "QTo", "JTo", "T8s", "98s", "A8o", 
-	"A7o", "A6o", "A5o", "A4o" ,
+	"A7o", "A6o", "A5o", "A4o",
 ]);
 
 // prettier-ignore
@@ -31,13 +31,13 @@ const chart4 = chart3.concat([
 ]);
 
 // prettier-ignore
-const chart5 = chart4.concat([ 
+const chart5 = chart4.concat([
 	"Q5s", "Q4s", "Q3s", "Q2s", "J6s", "J5s", "J4s", "J3s", "J2s", "T6s",
 	"T5s", "T4s", "T3s", "J9o", "96s", "95s", "Q8o", "J8o", "T8o", "98o",
 	"85s", "84s", "Q7o", "J7o", "T7o", "97o", "87o", "75s", "74s", "Q6o",
 	"J6o", "86o", "76o", "64s", "K5o", "Q5o", "54s", "53s", "K4o", "Q4o",
 	"43s", "K3o", "Q3o", "K2o", "Q2o",
-])
+]);
 
 /*---------------------------- Variables (state) ----------------------------*/
 
@@ -102,6 +102,7 @@ dropdownItems.forEach(item => {
 		if (e.target.id === "dropdown-item5") {
 			chartValue = chart5;
 		}
+		// Runs init function if user selects seat after game ends
 		if (buttonDiv.classList.contains("is-hidden")) {
 			dropdownLabel.innerText = e.target.innerText;
 			init();
@@ -180,6 +181,7 @@ function getHandValue() {
 }
 
 function isInChart(bool) {
+	// Assigns default seat position if user doesn't select one
 	if (!chartValue) {
 		chartValue = chart1;
 		dropdownLabel.innerText = "UTG and UTG+1";
@@ -244,7 +246,7 @@ function getRandomCard() {
 }
 
 function playAudio(sound) {
-	// This line checks if the user has interacted with the page before playing audio
+	// Checks if the user has interacted with the page before playing any audio
 	if (chartValue) {
 		sound.volume = 0.5;
 		sound.play();
