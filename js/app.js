@@ -56,6 +56,7 @@ const foldButton = document.querySelector("#foldButton");
 const resetButton = document.querySelector("#resetButton");
 const infoIcon = document.querySelector("#info");
 const infoMessageButton = document.querySelector("#infoMessageButton");
+const muteButton = document.querySelector("#muteButton");
 
 // Divs
 const buttonDiv = document.querySelector("#button-div");
@@ -119,6 +120,9 @@ dropdownItems.forEach(item => {
 
 infoIcon.addEventListener("click", toggleInfoMessage);
 infoMessageButton.addEventListener("click", toggleInfoMessage);
+muteButton.addEventListener("click", () => {
+	document.querySelector(".fa-ban").classList.toggle("is-hidden")
+});
 
 pushButton.addEventListener("click", () => isInChart(true));
 foldButton.addEventListener("click", () => isInChart(false));
@@ -246,10 +250,12 @@ function getRandomCard() {
 
 function playAudio(sound) {
 	// Checks if the user has interacted with the page before playing any audio
-	if (chartValue) {
-		sound.volume = 0.5;
-		sound.play();
-	} else return;
+	if (!document.querySelector(".fa-ban").classList.contains("is-hidden")) {
+		return
+	} else if (chartValue) {
+			sound.volume = 0.5;
+			sound.play();
+		} else return;
 }
 
 function renderScore() {
@@ -260,6 +266,6 @@ function toggleInfoMessage() {
 	infoMessage.classList.toggle("is-hidden");
 }
 
-// Builds the game and starts the game when page loads
+// Builds the deck and starts the game when page loads
 makeDeck();
 init();

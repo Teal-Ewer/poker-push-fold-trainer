@@ -19,6 +19,17 @@ body {
 	height: 100%;
 }
 
+#muteButton {
+	position: absolute;
+	top: 40px;
+	right: 10px;
+	cursor: pointer;
+}
+
+i {
+	transition: all 1s ease-in-out;
+}
+
 h1 {
 	font-size: 2.5rem;
 }
@@ -74,6 +85,11 @@ img {
 @media only screen and (max-width: 550px) {
 	#info {
 		top: 20px;
+		right: 30px;
+	}
+
+	#muteButton {
+		top: 50px;
 		right: 30px;
 	}
 
