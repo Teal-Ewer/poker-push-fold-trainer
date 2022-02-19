@@ -120,8 +120,11 @@ dropdownItems.forEach(item => {
 
 infoIcon.addEventListener("click", toggleInfoMessage);
 infoMessageButton.addEventListener("click", toggleInfoMessage);
-muteButton.addEventListener("click", () => {
-	document.querySelector(".fa-ban").classList.toggle("is-hidden")
+
+muteButton.addEventListener("click", function () {
+	if (this.name === "volume-high-outline") {
+		this.name = "volume-mute-outline";
+	} else this.name = "volume-high-outline";
 });
 
 pushButton.addEventListener("click", () => isInChart(true));
@@ -249,13 +252,10 @@ function getRandomCard() {
 }
 
 function playAudio(sound) {
-	// Checks if the user has interacted with the page before playing any audio
-	if (!document.querySelector(".fa-ban").classList.contains("is-hidden")) {
-		return
-	} else if (chartValue) {
-			sound.volume = 0.5;
-			sound.play();
-		} else return;
+	if (chartValue && muteButton.name === "volume-high-outline") {
+		sound.volume = 0.5;
+		sound.play();
+	} else return;
 }
 
 function renderScore() {

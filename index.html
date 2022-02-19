@@ -103,14 +103,15 @@
 					</div>
 				</div>
 			</div>
-			<span id="info" class="icon is-medium">
-				<i class="fas fa-info-circle fa-lg"></i>
+			<span id="info" class="icon is-large">
+				<ion-icon name="information-circle-outline"></ion-icon>
 			</span>
-			<span id="muteButton" class="icon is-medium">
-				<span class="fa-stack fa-medium">
-					<i class="fas fa-headphones fa-stack-1x"></i>
-					<i class="fas fa-ban fa-stack-2x has-text-danger is-hidden"></i>
-				</span>
+			<span id="muteButtonSpan" class="icon is-large">
+				<ion-icon
+					id="muteButton"
+					class="ion-ionic"
+					name="volume-high-outline"
+				></ion-icon>
 			</span>
 			<div class="cards block">
 				<img src="images/T_of_diamonds.png" alt="" class="leftCard" />
@@ -130,5 +131,13 @@
 				<h2 class="" id="score">Score: 0</h2>
 			</div>
 		</div>
+		<script
+			type="module"
+			src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+		></script>
+		<script
+			nomodule
+			src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+		></script>
 	</body>
 </html>

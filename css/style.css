@@ -9,6 +9,7 @@ body {
 	top: 5px;
 	right: 10px;
 	cursor: pointer;
+	font-size: 24px;
 }
 
 #infoMessage {
@@ -19,15 +20,12 @@ body {
 	height: 100%;
 }
 
-#muteButton {
+#muteButtonSpan {
 	position: absolute;
 	top: 40px;
 	right: 10px;
 	cursor: pointer;
-}
-
-i {
-	transition: all 1s ease-in-out;
+	font-size: 24px;
 }
 
 h1 {
@@ -88,8 +86,12 @@ img {
 		right: 30px;
 	}
 
-	#muteButton {
-		top: 50px;
+	#infoMessageButton {
+		margin-right: 10px;
+	}
+
+	#muteButtonSpan {
+		top: 70px;
 		right: 30px;
 	}
 
@@ -97,12 +99,3 @@ img {
 		font-size: 0.85rem;
 	}
 }
-
-/* 
-element.style {
-    background-color: grey;
-    border-radius: 50%;
-    display: inline-block;
-    width: 25px;
-    color: white;
-} */
