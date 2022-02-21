@@ -122,9 +122,9 @@ infoIcon.addEventListener("click", toggleInfoMessage);
 infoMessageButton.addEventListener("click", toggleInfoMessage);
 
 muteButton.addEventListener("click", function () {
-	if (this.name === "volume-high-outline") {
-		this.name = "volume-mute-outline";
-	} else this.name = "volume-high-outline";
+	this.name === "volume-high-outline"
+		? (this.name = "volume-mute-outline")
+		: (this.name = "volume-high-outline");
 });
 
 pushButton.addEventListener("click", () => isInChart(true));

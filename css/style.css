@@ -1,7 +1,18 @@
 body {
-	height: 100vh;
-	background-color: #f8f9fa;
+	--background: #f8f9fa;
+	--background-dark: #1b1e21;
+	--box-background: #e9ecef;
+	--box-background-dark: #24282d;
+	--text-color-light: #4a4a4a;
+	--text-color-dark: #dee2e6;
+	min-height: 100vh;
+	background-color: var(--background);
 	text-align: center;
+	color: var(--text-color);
+}
+
+.subhead {
+	margin-bottom: 1em;
 }
 
 #info {
@@ -40,7 +51,8 @@ h2 {
 	position: relative;
 	max-width: 550px;
 	height: auto;
-	background-color: #e9ecef;
+	background-color: var(--box-background);
+	color: var(--text-color);
 	margin: 0 auto;
 	border-radius: 10px;
 }
