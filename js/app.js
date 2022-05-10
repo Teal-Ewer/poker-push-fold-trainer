@@ -61,6 +61,7 @@ const muteButton = document.querySelector("#muteButton");
 // Divs
 const buttonDiv = document.querySelector("#button-div");
 const resetButtonDiv = document.querySelector("#reset-button-div");
+const body = document.querySelector("body");
 
 // Images
 const leftCard = document.querySelector(".leftCard");
@@ -205,6 +206,8 @@ function isInChart(bool) {
 function renderCorrectGuess() {
 	playAudio(correctChime);
 	resultsMessage.classList.add("animate__animated", "animate__pulse");
+	pushButton.setAttribute("disabled", "");
+	foldButton.setAttribute("disabled", "");
 	if (score < 3) {
 		resultsMessage.innerText = "You got it! Keep it up!";
 	} else if (score < 5) {
@@ -216,7 +219,11 @@ function renderCorrectGuess() {
 	} else if (score === 8) {
 		resultsMessage.innerText = "Almost there! You can do it!";
 	} else resultsMessage.innerText = "The prize is in sight!";
-	setTimeout(deal, 1600);
+	setTimeout(() => {
+		pushButton.removeAttribute("disabled");
+		foldButton.removeAttribute("disabled");
+		deal();
+	}, 1600);
 	renderScore();
 }
 
