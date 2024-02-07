@@ -20,6 +20,14 @@ body {
 	font-size: 24px;
 }
 
+#github {
+	position: absolute;
+	top: 90px;
+	right: 22px;
+	cursor: pointer;
+	font-size: 24px;
+}
+
 #infoMessage {
 	position: absolute;
 	top: 0;
@@ -78,15 +86,16 @@ h2 {
 	transform: translateX(-35%);
 }
 
+.leftCard,
+.rightCard {
+	width: 45%;
+	max-width: 250px;
+}
+
 .resultsMessageDiv {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-}
-
-img {
-	width: 45%;
-	max-width: 250px;
 }
 
 @media only screen and (max-width: 550px) {

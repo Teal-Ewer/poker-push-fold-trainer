@@ -260,9 +260,9 @@ function getRandomCard() {
 
 function playAudio(sound) {
 	if (chartValue && muteButton.name === "volume-high-outline") {
-		sound.volume = 0.5;
+		sound.volume = sound === loseBuzzer ? 0.2 : 0.5;
 		sound.play();
-	} else return;
+	}
 }
 
 function renderScore() {
